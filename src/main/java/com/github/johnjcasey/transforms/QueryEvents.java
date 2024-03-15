@@ -19,9 +19,11 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.UnknownKeyFor;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
+import java.util.Objects;
 
 public class QueryEvents extends PTransform<@NonNull PCollection<byte[]>, @NonNull PCollection<Event>> {
 
@@ -39,18 +41,18 @@ public class QueryEvents extends PTransform<@NonNull PCollection<byte[]>, @NonNu
                 .apply(Flatten.iterables());
     }
 
-    public class EventApiCaller implements Caller<DateRange, List<Event>> {
+    public static class EventApiCaller implements Caller<DateRange, List<Event>> {
         @Override
         public List<Event> call(DateRange request) throws @UnknownKeyFor @NonNull @Initialized UserCodeExecutionException {
             try {
                 return EventApi.INSTANCE.get(request.startDate, request.endDate);
             } catch (Exception e) {
-                throw new UserCodeExecutionException("Unable to retrieve events");
+                throw new UserCodeExecutionException("Unable to retrieve events", e);
             }
         }
     }
 
-    public class DateRange {
+    public static class DateRange implements Serializable {
 
         public DateRange(Instant startDate, Instant endDate) {
             this.startDate = startDate;
@@ -59,5 +61,18 @@ public class QueryEvents extends PTransform<@NonNull PCollection<byte[]>, @NonNu
 
         public Instant startDate;
         public Instant endDate;
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            DateRange dateRange = (DateRange) o;
+            return Objects.equals(startDate, dateRange.startDate) && Objects.equals(endDate, dateRange.endDate);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(startDate, endDate);
+        }
     }
 }
