@@ -22,16 +22,19 @@ import org.checkerframework.checker.nullness.qual.UnknownKeyFor;
 
 import java.util.List;
 
-public class QueryPlayerAtEvents extends PTransform<PCollection<Event>, PCollection<KV<Event, PlayerAtEvent>>> {
+public class QueryPlayerAtEvents extends PTransform<PCollection<Event>, PCollection<PlayerAtEvent>> {
     @Override
-    public PCollection<KV<Event, PlayerAtEvent>> expand(PCollection<Event> input) {
+    public PCollection<PlayerAtEvent> expand(PCollection<Event> input) {
         return input.apply(RequestResponseIO.of(new PlayerAtEventApiCaller(), KvCoder.of(SerializableCoder.of(Event.class), ListCoder.of(SerializableCoder.of(PlayerAtEvent.class)))))
                 .getResponses()
-                .apply(ParDo.of(new DoFn<KV<Event, List<PlayerAtEvent>>, KV<Event, PlayerAtEvent>>() {
+                .apply(ParDo.of(new DoFn<KV<Event, List<PlayerAtEvent>>, PlayerAtEvent>() {
                     @ProcessElement
-                    public void processElement(@Element KV<Event, List<PlayerAtEvent>> element, OutputReceiver<KV<Event, PlayerAtEvent>> outputReceiver) {
+                    public void processElement(@Element KV<Event, List<PlayerAtEvent>> element, OutputReceiver< PlayerAtEvent> outputReceiver) {
                         for (PlayerAtEvent player : element.getValue()) {
-                            outputReceiver.output(KV.of(element.getKey(), player));
+                            if (player.eventId == null) {
+                                player.eventId = element.getKey().id;
+                            }
+                            outputReceiver.output(player);
                         }
                     }
                 }));
@@ -43,7 +46,7 @@ public class QueryPlayerAtEvents extends PTransform<PCollection<Event>, PCollect
             try {
                 return KV.of(request, PlayerAtEventApi.INSTANCE.get(request.id));
             } catch (Exception e) {
-                throw new UserCodeExecutionException("Unable to retrieve events", e);
+                throw new UserCodeExecutionException("Unable to retrieve players", e);
             }
         }
     }

@@ -1,24 +1,32 @@
 package com.github.johnjcasey.data;
 
+import org.apache.beam.sdk.schemas.JavaFieldSchema;
+import org.apache.beam.sdk.schemas.annotations.DefaultSchema;
+
+import javax.annotation.Nullable;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+@DefaultSchema(JavaFieldSchema.class)
 public class PlayerAtEvent implements Serializable {
-    public String name;
+    public @Nullable String name;
 
-    public String userId;
+    public @Nullable String userId;
 
-    public String playerId;
+    public @Nullable String playerId;
 
-    public Team team;
+    public @Nullable String eventId;
 
-    public Army army;
+    public @Nullable Team team;
 
+    public @Nullable Army army;
+
+    public @Nullable String armyListObjectId;
     public List<Game> total_games;
 
-    public Map<String,String> opponentIds;
+    public Map<@org.checkerframework.checker.nullness.qual.Nullable String,@org.checkerframework.checker.nullness.qual.Nullable String> opponentIds;
 
     @Override
     public boolean equals(Object o) {
@@ -34,8 +42,8 @@ public class PlayerAtEvent implements Serializable {
     }
 
     public static class Team implements Serializable{
-        public String name;
-        public String id;
+        public @Nullable String name;
+        public @Nullable String id;
 
         @Override
         public boolean equals(Object o) {
@@ -52,8 +60,8 @@ public class PlayerAtEvent implements Serializable {
     }
 
     public static class Army implements Serializable{
-        public String name;
-        public String id;
+        public @Nullable String name;
+        public @Nullable String id;
 
         @Override
         public boolean equals(Object o) {

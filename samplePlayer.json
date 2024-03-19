@@ -1,0 +1,2201 @@
+{
+  "data": [
+    {
+      "placing": 1,
+      "name": "Cosmic Berhow",
+      "firstName": "Cosmic",
+      "lastName": "Berhow",
+      "ITCBonusPoints": 3.9000000000000004,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 3,
+      "pod_numWins": 0,
+      "total_numWins": 3,
+      "magic_match_percentage_sos": 55.5556,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 55.5556,
+      "battlePoints": 240,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 240,
+      "teamName": "",
+      "armyName": "Necrons",
+      "armyId": "MJmYbwP3ak",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "kR5Cxt1KV0",
+      "playerId": "EHTH-18VX-D1KC",
+      "id": "JNRTXU4MGH",
+      "objectId": "JNRTXU4MGH",
+      "playerObjectId": "JNRTXU4MGH",
+      "armyListObjectId": "70V30NLA5N",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "VWCF-UDQM-A43Q",
+        "2": "K6BH-BK5D-A08F",
+        "3": "A5G9-53N9-KY56"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 100
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 61
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 79
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 100
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 61
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 79
+        }
+      ],
+      "bracket_seed": 1706476877574,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 240,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "team": {},
+      "subFaction": {},
+      "character": {},
+      "army": {
+        "name": "Necrons",
+        "id": "MJmYbwP3ak"
+      }
+    },
+    {
+      "placing": 2,
+      "name": "Thomas Borck",
+      "firstName": "Thomas",
+      "lastName": "Borck",
+      "ITCBonusPoints": 3.9000000000000004,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 3,
+      "pod_numWins": 0,
+      "total_numWins": 3,
+      "magic_match_percentage_sos": 44.4444,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 44.4444,
+      "battlePoints": 241,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 241,
+      "teamName": "Lone Wolf",
+      "teamId": "nCiAQsNaA8",
+      "armyName": "",
+      "armyId": "NzdnFwXEh2",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "JybRJuBEQ8",
+      "playerId": "ANX5-AFU1-0DXN",
+      "id": "944G6X7WEQ",
+      "objectId": "944G6X7WEQ",
+      "playerObjectId": "944G6X7WEQ",
+      "armyListObjectId": "1DK189BMPC",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "Q8TF-L3DM-8WPE",
+        "2": "GE9E-0WFQ-HL66",
+        "3": "F7HQ-A0CB-N7Y8"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 86
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 78
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 77
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 86
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 78
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 77
+        }
+      ],
+      "bracket_seed": 1706476815310,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 241,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "subFaction": {},
+      "character": {},
+      "team": {
+        "name": "Lone Wolf",
+        "id": "nCiAQsNaA8"
+      },
+      "army": {
+        "name": "Iron Hands",
+        "id": "NzdnFwXEh2"
+      }
+    },
+    {
+      "placing": 3,
+      "name": "Riley Morris",
+      "firstName": "Riley",
+      "lastName": "Morris",
+      "ITCBonusPoints": 2.4,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 2,
+      "pod_numWins": 0,
+      "total_numWins": 2,
+      "magic_match_percentage_sos": 66.6667,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 66.6667,
+      "battlePoints": 230,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 230,
+      "teamName": "X-4",
+      "teamId": "EWBW3QVDGX",
+      "armyName": "",
+      "armyId": "20YaAc7wrp",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "948HBL73RH",
+      "playerId": "F7HQ-A0CB-N7Y8",
+      "id": "TYCE43QNAQ",
+      "objectId": "TYCE43QNAQ",
+      "playerObjectId": "TYCE43QNAQ",
+      "armyListObjectId": "1E1QUW3QAP",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "FGNE-PNVP-JAL5",
+        "2": "J2JM-YGDP-J4C7",
+        "3": "ANX5-AFU1-0DXN"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 100
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 60
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 70
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 100
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 60
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 70
+        }
+      ],
+      "bracket_seed": 1706926176886,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 230,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "subFaction": {},
+      "character": {},
+      "team": {
+        "name": "X-4",
+        "id": "EWBW3QVDGX"
+      },
+      "army": {
+        "name": "T'au Empire",
+        "id": "20YaAc7wrp"
+      }
+    },
+    {
+      "placing": 4,
+      "name": "Jakob Birch Rosenberg",
+      "firstName": "Jakob Birch",
+      "lastName": "Rosenberg",
+      "ITCBonusPoints": 2.4,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 2,
+      "pod_numWins": 0,
+      "total_numWins": 2,
+      "magic_match_percentage_sos": 66.5556,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 66.5556,
+      "battlePoints": 229,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 229,
+      "teamName": "",
+      "armyName": "Adeptus Custodes",
+      "armyId": "os1AVKE2jz",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "H9XUBM80U5",
+      "playerId": "A5G9-53N9-KY56",
+      "id": "KL77QTP0Q4",
+      "objectId": "KL77QTP0Q4",
+      "playerObjectId": "KL77QTP0Q4",
+      "armyListObjectId": "3UGG24LN0A",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "20H3-7842-K4N6",
+        "2": "03AD-9QX0-PP90",
+        "3": "EHTH-18VX-D1KC"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 94
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 64
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 71
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 94
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 64
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 71
+        }
+      ],
+      "bracket_seed": 1706476822972,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 229,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "team": {},
+      "subFaction": {},
+      "character": {},
+      "army": {
+        "name": "Adeptus Custodes",
+        "id": "os1AVKE2jz"
+      }
+    },
+    {
+      "placing": 5,
+      "name": "Matthew Macneil",
+      "firstName": "Matthew",
+      "lastName": "Macneil",
+      "ITCBonusPoints": 2.2,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 2,
+      "pod_numWins": 0,
+      "total_numWins": 2,
+      "magic_match_percentage_sos": 55.5555,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 55.5555,
+      "battlePoints": 233,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 233,
+      "teamName": "Clouds Brewing",
+      "teamId": "Wg9W0o5JM8",
+      "armyName": "Asuryani",
+      "armyId": "LaUM59NS9T",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "fv0Z7h0ADm",
+      "playerId": "K6BH-BK5D-A08F",
+      "id": "X2JTPU592J",
+      "objectId": "X2JTPU592J",
+      "playerObjectId": "X2JTPU592J",
+      "armyListObjectId": "35QEM1069G",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "WGHA-HDP6-ABTR",
+        "2": "EHTH-18VX-D1KC",
+        "3": "J2JM-YGDP-J4C7"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 100
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 53
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 80
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 100
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 53
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 80
+        }
+      ],
+      "bracket_seed": 1706476763477,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 233,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "subFaction": {},
+      "character": {},
+      "team": {
+        "name": "Clouds Brewing",
+        "id": "Wg9W0o5JM8"
+      },
+      "army": {
+        "name": "Aeldari",
+        "id": "LaUM59NS9T"
+      }
+    },
+    {
+      "placing": 6,
+      "name": "Clay Plumridge",
+      "firstName": "Clay",
+      "lastName": "Plumridge",
+      "ITCBonusPoints": 2.2,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 2,
+      "pod_numWins": 0,
+      "total_numWins": 2,
+      "magic_match_percentage_sos": 44.4444,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 44.4444,
+      "battlePoints": 199,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 199,
+      "teamName": "X-4",
+      "teamId": "EWBW3QVDGX",
+      "armyName": "Adeptus Custodes",
+      "armyId": "os1AVKE2jz",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "AB4TPK6ADE",
+      "playerId": "03AD-9QX0-PP90",
+      "id": "M4U8LM7M3G",
+      "objectId": "M4U8LM7M3G",
+      "playerObjectId": "M4U8LM7M3G",
+      "armyListObjectId": "6WDHNFH8HH",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "Q1KX-4VCL-V6VD",
+        "2": "A5G9-53N9-KY56",
+        "3": "Q8TF-L3DM-8WPE"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 91
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 53
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 55
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 91
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 53
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 55
+        }
+      ],
+      "bracket_seed": 1707245658424,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 199,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "subFaction": {},
+      "character": {},
+      "team": {
+        "name": "X-4",
+        "id": "EWBW3QVDGX"
+      },
+      "army": {
+        "name": "Adeptus Custodes",
+        "id": "os1AVKE2jz"
+      }
+    },
+    {
+      "placing": 7,
+      "name": "Adam Johnson",
+      "firstName": "Adam",
+      "lastName": "Johnson",
+      "ITCBonusPoints": 2,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 2,
+      "pod_numWins": 0,
+      "total_numWins": 2,
+      "magic_match_percentage_sos": 44.3333,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 44.3333,
+      "battlePoints": 206,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 206,
+      "teamName": "Worlds of war studios",
+      "teamId": "2ZOYylZCSb",
+      "armyName": "Salamanders",
+      "armyId": "2V9GUjn5nD",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "QnbA8jUSwY",
+      "playerId": "FGNE-PNVP-JAL5",
+      "id": "QKX8R5G3MN",
+      "objectId": "QKX8R5G3MN",
+      "playerObjectId": "QKX8R5G3MN",
+      "armyListObjectId": "F7TW6P5646",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "F7HQ-A0CB-N7Y8",
+        "2": "Y76P-PPM4-GVAJ",
+        "3": "Q1KX-4VCL-V6VD"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 30
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 94
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 82
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 30
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 94
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 82
+        }
+      ],
+      "bracket_seed": 1707355893213,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 206,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "subFaction": {},
+      "character": {},
+      "team": {
+        "name": "Worlds of war studios",
+        "id": "2ZOYylZCSb"
+      },
+      "army": {
+        "name": "Salamanders",
+        "id": "2V9GUjn5nD"
+      }
+    },
+    {
+      "placing": 8,
+      "name": "Zach Lee",
+      "firstName": "Zach",
+      "lastName": "Lee",
+      "ITCBonusPoints": 2,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 2,
+      "pod_numWins": 0,
+      "total_numWins": 2,
+      "magic_match_percentage_sos": 38.8889,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 38.8889,
+      "battlePoints": 247,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 247,
+      "teamName": "legion redacted",
+      "teamId": "blEu6LIQrU",
+      "armyName": "Chaos Knights",
+      "armyId": "VKTL0xRdne",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "D54FME399D",
+      "playerId": "YBXX-3WKT-MDCM",
+      "id": "JRFACJ9KWT",
+      "objectId": "JRFACJ9KWT",
+      "playerObjectId": "JRFACJ9KWT",
+      "armyListObjectId": "3UVEM6LTWT",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "CJMN-EW1B-1BY5",
+        "2": "D00L-JGVT-VHQ1",
+        "3": "VWCF-UDQM-A43Q"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 80
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 68
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 99
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 80
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 68
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 99
+        }
+      ],
+      "bracket_seed": 1707071549771,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 247,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "subFaction": {},
+      "character": {},
+      "team": {
+        "name": "legion redacted",
+        "id": "blEu6LIQrU"
+      },
+      "army": {
+        "name": "Chaos Knights",
+        "id": "VKTL0xRdne"
+      }
+    },
+    {
+      "placing": 9,
+      "name": "Jacob Herrera",
+      "firstName": "Jacob",
+      "lastName": "Herrera",
+      "ITCBonusPoints": 1,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 1,
+      "pod_numWins": 0,
+      "total_numWins": 1,
+      "magic_match_percentage_sos": 72.2222,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 72.2222,
+      "battlePoints": 182,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 182,
+      "teamName": "",
+      "armyName": "Salamanders",
+      "armyId": "2V9GUjn5nD",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "B08B8FGH83",
+      "playerId": "Q8TF-L3DM-8WPE",
+      "id": "6WKL30CK3E",
+      "objectId": "6WKL30CK3E",
+      "playerObjectId": "6WKL30CK3E",
+      "armyListObjectId": "A1TPGW1KGQ",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "ANX5-AFU1-0DXN",
+        "2": "CJMN-EW1B-1BY5",
+        "3": "03AD-9QX0-PP90"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 65
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 83
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 34
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 65
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 83
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 34
+        }
+      ],
+      "bracket_seed": 1706476774671,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 182,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "team": {},
+      "subFaction": {},
+      "character": {},
+      "army": {
+        "name": "Salamanders",
+        "id": "2V9GUjn5nD"
+      }
+    },
+    {
+      "placing": 10,
+      "name": "Michael Naus",
+      "firstName": "Michael",
+      "lastName": "Naus",
+      "ITCBonusPoints": 1,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 1,
+      "pod_numWins": 0,
+      "total_numWins": 1,
+      "magic_match_percentage_sos": 66.6667,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 66.6667,
+      "battlePoints": 217,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 217,
+      "teamName": "",
+      "armyName": "Necrons",
+      "armyId": "MJmYbwP3ak",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "cEQvBKa5gX",
+      "playerId": "VWCF-UDQM-A43Q",
+      "id": "GKMHHNWMDJ",
+      "objectId": "GKMHHNWMDJ",
+      "playerObjectId": "GKMHHNWMDJ",
+      "armyListObjectId": "N3TB77UQDN",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "EHTH-18VX-D1KC",
+        "2": "WGHA-HDP6-ABTR",
+        "3": "YBXX-3WKT-MDCM"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 61
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 96
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 60
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 61
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 96
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 60
+        }
+      ],
+      "bracket_seed": 1706476833841,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 217,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "team": {},
+      "subFaction": {},
+      "character": {},
+      "army": {
+        "name": "Necrons",
+        "id": "MJmYbwP3ak"
+      }
+    },
+    {
+      "placing": 11,
+      "name": "Kyle Beck",
+      "firstName": "Kyle",
+      "lastName": "Beck",
+      "ITCBonusPoints": 1.1,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 1,
+      "pod_numWins": 0,
+      "total_numWins": 1,
+      "magic_match_percentage_sos": 55.5555,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 55.5555,
+      "battlePoints": 79,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 79,
+      "teamName": "",
+      "armyName": "Chaos Space Marines",
+      "armyId": "H2xjbjbDku",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "VK9A8805CU",
+      "playerId": "GE9E-0WFQ-HL66",
+      "id": "AKGCYNN8XD",
+      "objectId": "AKGCYNN8XD",
+      "playerObjectId": "AKGCYNN8XD",
+      "armyListObjectId": "CFQHYNQ0TM",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "D00L-JGVT-VHQ1",
+        "2": "ANX5-AFU1-0DXN",
+        "3": "WGHA-HDP6-ABTR"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 61
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 18
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 0
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 61
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 18
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 0
+        }
+      ],
+      "bracket_seed": 1707496758241,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 79,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "team": {},
+      "subFaction": {},
+      "character": {},
+      "army": {
+        "name": "Chaos Space Marines",
+        "id": "H2xjbjbDku"
+      }
+    },
+    {
+      "placing": 12,
+      "name": "John Casey",
+      "firstName": "John",
+      "lastName": "Casey",
+      "ITCBonusPoints": 1.1,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 1,
+      "pod_numWins": 0,
+      "total_numWins": 1,
+      "magic_match_percentage_sos": 55.4445,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 55.4445,
+      "battlePoints": 220,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 220,
+      "teamName": "X-4",
+      "teamId": "EWBW3QVDGX",
+      "armyName": "Chaos Space Marines",
+      "armyId": "H2xjbjbDku",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "RHCLDBM5LE",
+      "playerId": "J2JM-YGDP-J4C7",
+      "id": "LMUL5N1ALL",
+      "objectId": "LMUL5N1ALL",
+      "playerObjectId": "LMUL5N1ALL",
+      "armyListObjectId": "E8M9J3DENV",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "Y76P-PPM4-GVAJ",
+        "2": "F7HQ-A0CB-N7Y8",
+        "3": "K6BH-BK5D-A08F"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 99
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 49
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 72
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 99
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 49
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 72
+        }
+      ],
+      "bracket_seed": 1706926166128,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 220,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "subFaction": {},
+      "character": {},
+      "team": {
+        "name": "X-4",
+        "id": "EWBW3QVDGX"
+      },
+      "army": {
+        "name": "Chaos Space Marines",
+        "id": "H2xjbjbDku"
+      }
+    },
+    {
+      "placing": 13,
+      "name": "Michał Parteka",
+      "firstName": "Michał",
+      "lastName": "Parteka",
+      "ITCBonusPoints": 1,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 1,
+      "pod_numWins": 0,
+      "total_numWins": 1,
+      "magic_match_percentage_sos": 55.4445,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 55.4445,
+      "battlePoints": 188,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 188,
+      "teamName": "Eskadra Meneli",
+      "teamId": "ztGjecDAIT",
+      "armyName": "Adepta Sororitas",
+      "armyId": "wR8xEC84cl",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "0CVKXN8HT9",
+      "playerId": "Q1KX-4VCL-V6VD",
+      "id": "TNXMJJG456",
+      "objectId": "TNXMJJG456",
+      "playerObjectId": "TNXMJJG456",
+      "armyListObjectId": "T92C13FRC7",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "03AD-9QX0-PP90",
+        "2": "20H3-7842-K4N6",
+        "3": "FGNE-PNVP-JAL5"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 55
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 68
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 65
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 55
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 2,
+          "gamePoints": 68
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 65
+        }
+      ],
+      "bracket_seed": 1706476804910,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 188,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "subFaction": {},
+      "character": {},
+      "team": {
+        "name": "Eskadra Meneli",
+        "id": "ztGjecDAIT"
+      },
+      "army": {
+        "name": "Adepta Sororitas",
+        "id": "wR8xEC84cl"
+      }
+    },
+    {
+      "placing": 14,
+      "name": "Garrett Stoddard",
+      "firstName": "Garrett",
+      "lastName": "Stoddard",
+      "ITCBonusPoints": 1.1,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 1,
+      "pod_numWins": 0,
+      "total_numWins": 1,
+      "magic_match_percentage_sos": 50,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 50,
+      "battlePoints": 126,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 126,
+      "teamName": "",
+      "armyName": "Necrons",
+      "armyId": "MJmYbwP3ak",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "E7TNKH77YP",
+      "playerId": "CJMN-EW1B-1BY5",
+      "id": "J49MTWDK8U",
+      "objectId": "J49MTWDK8U",
+      "playerObjectId": "J49MTWDK8U",
+      "armyListObjectId": "2KN9YUEFQ7",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "YBXX-3WKT-MDCM",
+        "2": "Q8TF-L3DM-8WPE"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 93
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 33
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 2,
+          "gamePoints": 93
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 33
+        }
+      ],
+      "bracket_seed": 1707231251266,
+      "checkedIn": true,
+      "dropped": true,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 126,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "team": {},
+      "subFaction": {},
+      "character": {},
+      "army": {
+        "name": "Necrons",
+        "id": "MJmYbwP3ak"
+      }
+    },
+    {
+      "placing": 15,
+      "name": "Cole Pickens",
+      "firstName": "Cole",
+      "lastName": "Pickens",
+      "ITCBonusPoints": 1,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 1,
+      "pod_numWins": 0,
+      "total_numWins": 1,
+      "magic_match_percentage_sos": 44.4444,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 44.4444,
+      "battlePoints": 208,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 208,
+      "teamName": "X-4",
+      "teamId": "EWBW3QVDGX",
+      "armyName": "Adepta Sororitas",
+      "armyId": "wR8xEC84cl",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "Y33ANJPQKM",
+      "playerId": "WGHA-HDP6-ABTR",
+      "id": "U93BNP3EA0",
+      "objectId": "U93BNP3EA0",
+      "playerObjectId": "U93BNP3EA0",
+      "armyListObjectId": "3V9A3007TP",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "K6BH-BK5D-A08F",
+        "2": "VWCF-UDQM-A43Q",
+        "3": "GE9E-0WFQ-HL66"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 62
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 46
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 100
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 62
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 46
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 100
+        }
+      ],
+      "bracket_seed": 1707271340798,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 208,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "subFaction": {},
+      "character": {},
+      "team": {
+        "name": "X-4",
+        "id": "EWBW3QVDGX"
+      },
+      "army": {
+        "name": "Adepta Sororitas",
+        "id": "wR8xEC84cl"
+      }
+    },
+    {
+      "placing": 16,
+      "name": "Cedric Vazquez",
+      "firstName": "Cedric",
+      "lastName": "Vazquez",
+      "ITCBonusPoints": 1,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 1,
+      "pod_numWins": 0,
+      "total_numWins": 1,
+      "magic_match_percentage_sos": 44.3333,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 44.3333,
+      "battlePoints": 177,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 177,
+      "teamName": "legion redacted",
+      "teamId": "blEu6LIQrU",
+      "armyName": "",
+      "armyId": "3LS9ISWDte",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "jPEwJLikXZ",
+      "playerId": "D00L-JGVT-VHQ1",
+      "id": "HMUQ3KVTM3",
+      "objectId": "HMUQ3KVTM3",
+      "playerObjectId": "HMUQ3KVTM3",
+      "armyListObjectId": "CAVEJU4QLF",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "GE9E-0WFQ-HL66",
+        "2": "YBXX-3WKT-MDCM",
+        "3": "Y76P-PPM4-GVAJ"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 38
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 41
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 98
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 38
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 41
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 2,
+          "gamePoints": 98
+        }
+      ],
+      "bracket_seed": 1707071593598,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 177,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "subFaction": {},
+      "character": {},
+      "team": {
+        "name": "legion redacted",
+        "id": "blEu6LIQrU"
+      },
+      "army": {
+        "name": "Hive Fleet Gorgon",
+        "id": "3LS9ISWDte"
+      }
+    },
+    {
+      "placing": 17,
+      "name": "Patrick Johnson",
+      "firstName": "Patrick",
+      "lastName": "Johnson",
+      "ITCBonusPoints": 0,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 0,
+      "pod_numWins": 0,
+      "total_numWins": 0,
+      "magic_match_percentage_sos": 50,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 50,
+      "battlePoints": 104,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 104,
+      "teamName": "",
+      "armyName": "Dark Angels",
+      "armyId": "GcG4M2kIYD",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "rFqPHrDXHd",
+      "playerId": "20H3-7842-K4N6",
+      "id": "F0FUL1HEEG",
+      "objectId": "F0FUL1HEEG",
+      "playerObjectId": "F0FUL1HEEG",
+      "armyListObjectId": "LHMPHN8NA7",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "A5G9-53N9-KY56",
+        "2": "Q1KX-4VCL-V6VD"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 68
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 36
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 68
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 36
+        }
+      ],
+      "bracket_seed": 1706926129743,
+      "checkedIn": true,
+      "dropped": true,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 104,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "team": {},
+      "subFaction": {},
+      "character": {},
+      "army": {
+        "name": "Dark Angels",
+        "id": "GcG4M2kIYD"
+      }
+    },
+    {
+      "placing": 18,
+      "name": "Allison BERHOW",
+      "firstName": "Allison",
+      "lastName": "BERHOW",
+      "ITCBonusPoints": 0,
+      "pod_ITCBonusPoints": 0,
+      "numWins": 0,
+      "pod_numWins": 0,
+      "total_numWins": 0,
+      "magic_match_percentage_sos": 44.4444,
+      "pod_magic_match_percentage_sos": 0,
+      "total_magic_match_percentage_sos": 44.4444,
+      "battlePoints": 97,
+      "pod_battlePoints": 0,
+      "total_battlePoints": 97,
+      "teamName": "",
+      "armyName": "Chaos Knights",
+      "armyId": "VKTL0xRdne",
+      "subFactionName": "",
+      "characterName": "",
+      "userId": "aoOwyIBvaU",
+      "playerId": "Y76P-PPM4-GVAJ",
+      "id": "7CBX0TVMWC",
+      "objectId": "7CBX0TVMWC",
+      "playerObjectId": "7CBX0TVMWC",
+      "armyListObjectId": "7XPKGH9G4E",
+      "listStatus": "passed",
+      "gameType": 1,
+      "isITC": false,
+      "opponentIds": {
+        "1": "J2JM-YGDP-J4C7",
+        "2": "FGNE-PNVP-JAL5",
+        "3": "D00L-JGVT-VHQ1"
+      },
+      "games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 31
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 44
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 22
+        }
+      ],
+      "pod_games": [],
+      "total_games": [
+        {
+          "gameNum": 1,
+          "gameResult": 0,
+          "gamePoints": 31
+        },
+        {
+          "gameNum": 2,
+          "gameResult": 0,
+          "gamePoints": 44
+        },
+        {
+          "gameNum": 3,
+          "gameResult": 0,
+          "gamePoints": 22
+        }
+      ],
+      "bracket_seed": 1706476866089,
+      "checkedIn": true,
+      "dropped": false,
+      "primaryKey": "numWins",
+      "pod_primaryKey": "pod_numWins",
+      "total_primaryKey": "total_numWins",
+      "primaryString": "Wins",
+      "secondaryKey": "magic_match_percentage_sos",
+      "pod_secondaryKey": "pod_magic_match_percentage_sos",
+      "total_secondaryKey": "total_magic_match_percentage_sos",
+      "secondaryString": "Oppt. Game Win %",
+      "novaOverallScore": 0,
+      "overallBattlePoints": 97,
+      "pod_overallBattlePoints": 0,
+      "overall_primaryKey": "overallBattlePoints",
+      "pod_overall_primaryKey": "overallBattlePoints",
+      "overall_primaryString": "Overall Score",
+      "overall_secondaryKey": "numWins",
+      "pod_overall_secondaryKey": "numWins",
+      "overall_secondaryString": "Wins",
+      "metrics": [
+        {
+          "name": "Wins",
+          "key": "numWins",
+          "isOn": true,
+          "negative": false,
+          "description": "Total match wins for a player. Ties are worth 0.5 wins, but recommended you use Swiss Points instead of wins if ties are possible."
+        },
+        {
+          "name": "Oppt. Game Win %",
+          "key": "magic_match_percentage_sos",
+          "isOn": true,
+          "negative": false,
+          "description": "The average of all your opponents' game win percentage with a minimum cap of 33%."
+        },
+        {
+          "name": "Battle Points",
+          "key": "battlePoints",
+          "isOn": true,
+          "negative": false,
+          "description": "Total points earned from game submitted."
+        }
+      ],
+      "team": {},
+      "subFaction": {},
+      "character": {},
+      "army": {
+        "name": "Chaos Knights",
+        "id": "VKTL0xRdne"
+      }
+    }
+  ],
+  "nextKey": "eyJvZmZzZXQiOjEwMCwidHlwZSI6InF1ZXJ5IiwidmFsdWUiOnsia2V5IjoiX2lkIiwidHlwZSI6InN0cmluZyIsInZhbHVlIjoiN0NCWDBUVk1XQyIsIm9iamVjdElkIjoiN0NCWDBUVk1XQyJ9fQ=="
+}

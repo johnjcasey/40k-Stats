@@ -1,11 +1,20 @@
 package com.github.johnjcasey.data;
 
+import org.apache.beam.sdk.schemas.JavaFieldSchema;
+import org.apache.beam.sdk.schemas.annotations.DefaultSchema;
+
+import javax.annotation.Nullable;
 import java.io.Serializable;
 import java.util.Objects;
 
+@DefaultSchema(JavaFieldSchema.class)
+
 public class Event implements Serializable {
     public int totalPlayers;
-    public String id;
+
+    public @Nullable String name;
+
+    public @Nullable String id;
 
     public boolean started;
 
