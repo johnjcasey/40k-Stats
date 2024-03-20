@@ -2,11 +2,9 @@ package com.github.johnjcasey.transforms;
 
 import com.github.johnjcasey.api.ListApi;
 import com.github.johnjcasey.data.ArmyList;
-import com.github.johnjcasey.data.Event;
 import org.apache.beam.io.requestresponse.Caller;
 import org.apache.beam.io.requestresponse.RequestResponseIO;
 import org.apache.beam.io.requestresponse.UserCodeExecutionException;
-import org.apache.beam.sdk.coders.SerializableCoder;
 import org.apache.beam.sdk.transforms.PTransform;
 import org.apache.beam.sdk.values.PCollection;
 import org.checkerframework.checker.initialization.qual.Initialized;

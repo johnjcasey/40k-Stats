@@ -1,6 +1,5 @@
 package com.github.johnjcasey.transforms;
 
-import com.github.johnjcasey.api.EventApi;
 import com.github.johnjcasey.api.PlayerAtEventApi;
 import com.github.johnjcasey.data.Event;
 import com.github.johnjcasey.data.PlayerAtEvent;
@@ -11,7 +10,6 @@ import org.apache.beam.sdk.coders.KvCoder;
 import org.apache.beam.sdk.coders.ListCoder;
 import org.apache.beam.sdk.coders.SerializableCoder;
 import org.apache.beam.sdk.transforms.DoFn;
-import org.apache.beam.sdk.transforms.Flatten;
 import org.apache.beam.sdk.transforms.PTransform;
 import org.apache.beam.sdk.transforms.ParDo;
 import org.apache.beam.sdk.values.KV;

@@ -1,7 +1,6 @@
 package com.github.johnjcasey.api;
 
 import com.github.johnjcasey.data.ArmyList;
-import com.github.johnjcasey.data.PlayerAtEvent;
 import com.google.gson.Gson;
 
 import java.io.FileInputStream;

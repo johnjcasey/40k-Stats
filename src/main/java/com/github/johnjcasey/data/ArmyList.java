@@ -2,7 +2,6 @@ package com.github.johnjcasey.data;
 
 import org.apache.beam.sdk.schemas.JavaFieldSchema;
 import org.apache.beam.sdk.schemas.annotations.DefaultSchema;
-import org.checkerframework.checker.units.qual.N;
 
 import javax.annotation.Nullable;
 import java.io.Serializable;
