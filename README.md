@@ -1,4 +1,4 @@
-# 40k-Elo
+# 40k-Stats
 
 This project seeks to create tools and data pipelines for gathering and analyzing match and army data for Warhammer 40k
 
