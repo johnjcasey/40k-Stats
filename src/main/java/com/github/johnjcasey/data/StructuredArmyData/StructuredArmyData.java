@@ -11,7 +11,7 @@ public class StructuredArmyData {
         Imperial_Knights("Imperial Knights", null),
         Adepta_Sororitas("Adepta Sororitas", AdeptaSororitas.INSTANCE),
         Space_Marines("Space Marines", null),
-        World_Eaters("World Eaters", null),
+        World_Eaters("World Eaters", WorldEaters.INSTANCE),
         Thousand_Sons("Thousand Sons", null),
         Chaos_Space_Marines("Chaos Space Marines", null),
         Death_Guard("Death Guard", null),

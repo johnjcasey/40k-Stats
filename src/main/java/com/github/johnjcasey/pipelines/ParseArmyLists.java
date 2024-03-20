@@ -26,5 +26,63 @@ public class ParseArmyLists {
         pipeline.run();
     }
 
-    private static final String TEST_LIST= "\n++ Army Roster (Imperium - Adepta Sororitas) [1,995pts] ++\n\n+ Configuration +\n\nBattle Size: 2. Strike Force (2000 Point limit)\n\nDetachment Choice: Hallowed Martyrs Detachment\n\nShow/Hide Options: Agents of the Imperium are visible\n\n+ Epic Hero +\n\nMorvenn Vahl [145pts]\n\nSaint Celestine [135pts]\n\nTriumph of Saint Katherine [125pts]\n\n+ Character +\n\nPalatine [65pts]: Blade of Saint Ellynor, Bolt Pistol\n\n+ Battleline +\n\nBattle Sisters Squad [100pts]\n. 6x Battle Sister: 6x Bolt Pistol, 6x Boltgun, 6x Close combat weapon\n. Battle Sister w/ Simulacrum Imperialus\n. Battle Sister w/ Special or Heavy Weapon: Multi-melta\n. Battle Sister w/ Special Weapon: Meltagun\n. Sister Superior: Condemnor boltgun, Power weapon\n\n+ Infantry +\n\nArco-Flagellants [150pts]\n. 10x Arco-Flagellant: 10x Arco-flails\n\nArco-Flagellants [150pts]\n. 10x Arco-Flagellant: 10x Arco-flails\n\nCrusaders [25pts]\n. Crusaders\n. . 2x Crusader: 2x Power Weapon\n\nCrusaders [25pts]\n. Crusaders\n. . 2x Crusader: 2x Power Weapon\n\nCrusaders [25pts]\n. Crusaders\n. . 2x Crusader: 2x Power Weapon\n\nRetributor Squad [105pts]\n. Retributor: Multi-melta\n. Retributor: Multi-melta\n. Retributor: Multi-melta\n. Retributor: Multi-melta\n. Retributor Superior: Condemnor boltgun, Power weapon\n\nRetributor Squad [105pts]\n. Retributor: Multi-melta\n. Retributor: Multi-melta\n. Retributor: Multi-melta\n. Retributor: Multi-melta\n. Retributor Superior: Condemnor boltgun, Power weapon\n\nSeraphim Squad [70pts]\n. 2x Seraphim: 2x Close combat weapon\n. . 2x 2 Bolt Pistols: 4x Bolt Pistol\n. Seraphim Superior\n. . Plasma Pistol and Power Weapon\n. Seraphim with Special Weapons\n. . 2x Ministorum Hand Flamers\n. Seraphim with Special Weapons\n. . 2x Ministorum Hand Flamers\n\nSeraphim Squad [70pts]\n. 2x Seraphim: 2x Close combat weapon\n. . 2x 2 Bolt Pistols: 4x Bolt Pistol\n. Seraphim Superior\n. . Plasma Pistol and Power Weapon\n. Seraphim with Special Weapons\n. . 2x Ministorum Hand Flamers\n. Seraphim with Special Weapons\n. . 2x Ministorum Hand Flamers\n\nSisters Novitiate Squad [85pts]\n. Novitiate Superior\n. . Plasma Pistol and Power Weapon\n. Novitiate with Sacred Banner\n. Novitiate with Simulacrum Imperialis\n. 7x Sister Novitiate (Melee Weapon): 7x Autopistol, 7x Noviatiate melee weapon\n\n+ Vehicle +\n\nCastigator [140pts]: Castigator battle cannon, Hunter-Killer Missile, Storm bolter\n\nParagon Warsuits [170pts]\n. Paragon Superior: Multi-melta, Paragon Grenade Launchers, Paragon War Blade\n. Paragon Warsuit: Multi-melta, Paragon Grenade Launchers, Paragon War Blade\n. Paragon Warsuit: Multi-melta, Paragon Grenade Launchers, Paragon War Blade\n\n+ Dedicated Transport +\n\nImmolator [115pts]: Hunter-Killer Missile, Twin Multi-melta\n\nImmolator [115pts]: Hunter-Killer Missile, Twin Multi-melta\n\nSororitas Rhino [75pts]: Hunter-Killer Missile\n\n++ Total: [1,995pts] ++";
+    private static final String TEST_LIST= "\n" +
+            "++ Army Roster (Chaos - World Eaters) [1,990pts] ++\n" +
+            "\n" +
+            "+ Configuration +\n" +
+            "\n" +
+            "Battle Size: 2. Strike Force (2000 Point limit)\n" +
+            "\n" +
+            "Blessings of Khorne Reference\n" +
+            "\n" +
+            "Detachment Choice: Berzerker Warband\n" +
+            "\n" +
+            "Show/Hide Options\n" +
+            "\n" +
+            "+ Epic Hero +\n" +
+            "\n" +
+            "Angron [415pts]\n" +
+            "\n" +
+            "Lord Invocatus [140pts]\n" +
+            "\n" +
+            "+ Battleline +\n" +
+            "\n" +
+            "Jakhals [70pts]: Icon of Khorne\n" +
+            ". B: 1 mauler chainblade, 7 chainblades\n" +
+            ". . 7x Jakhals: 7x Autopistol, 7x Jakhal chainblades\n" +
+            ". Dishonoured w/ skullsmasher\n" +
+            "\n" +
+            "+ Infantry +\n" +
+            "\n" +
+            "Eightbound [145pts]\n" +
+            ". 2x Eightbound: 2x Eightbound eviscerators\n" +
+            ". Eightbound Champion: Lacerators\n" +
+            "\n" +
+            "Exalted Eightbound [320pts]\n" +
+            ". 5x Exalted Eightbound: 5x Eightbound chainfist, 5x Eightbound eviscerator\n" +
+            ". Exalted Eightbound Champion: Paired Eightbound chainfists\n" +
+            "\n" +
+            "Exalted Eightbound [160pts]\n" +
+            ". 2x Exalted Eightbound: 2x Eightbound chainfist, 2x Eightbound eviscerator\n" +
+            ". Exalted Eightbound Champion: Paired Eightbound chainfists\n" +
+            "\n" +
+            "Exalted Eightbound [160pts]\n" +
+            ". 2x Exalted Eightbound: 2x Eightbound chainfist, 2x Eightbound eviscerator\n" +
+            ". Exalted Eightbound Champion: Paired Eightbound chainfists\n" +
+            "\n" +
+            "+ Beast +\n" +
+            "\n" +
+            "World Eaters Chaos Spawn [65pts]\n" +
+            ". 2x Chaos Spawn: 2x Hideous Mutations\n" +
+            "\n" +
+            "World Eaters Chaos Spawn [65pts]\n" +
+            ". 2x Chaos Spawn: 2x Hideous Mutations\n" +
+            "\n" +
+            "+ Vehicle +\n" +
+            "\n" +
+            "Khorne Lord of Skulls [450pts]: Daemongore cannon, Skullhurler\n" +
+            "\n" +
+            "++ Total: [1,990pts] ++\n" +
+            "\n" +
+            "Created with BattleScribe (https://battlescribe.net)";
 }
