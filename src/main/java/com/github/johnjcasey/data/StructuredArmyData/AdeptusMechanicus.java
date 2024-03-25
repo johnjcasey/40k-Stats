@@ -19,11 +19,11 @@ public class AdeptusMechanicus implements StructuredArmyData.FactionData {
     }
 
     enum Detachments implements StructuredArmyData.DetachmentList {
-        Cohort_Cybernetica("Cohort Cybernetica", List.of("Arch-negator","Emotionless Clarity","Lord of Machines","Necromechanic"),
-        Data_psalm_Conclave("Data-psalm Conclave", List.of("Data-blessed Autosermon","Mantle of the Gnosticarch","Mechanicus Locum","Temporcopia"),
-        Explorator_Maniple("Explorator Maniple", List.of("Artisan","Genetor","Logis","Magos"),
-        Rad_zone_Corps("Rad-zone Corps", List.of("Autoclavic Denunciation","Malphonic Susurrus","Peerless Eradicator","Radial Suffusion"),
-        Skitarii_Hunter_Cohort("Skitarii Hunter Cohort", List.of("Battle-sphere Uplink","Cantic Thrallnet","Clandestine Infiltrator","Veiled Hunter");
+        Cohort_Cybernetica("Cohort Cybernetica", List.of("Arch-negator","Emotionless Clarity","Lord of Machines","Necromechanic")),
+        Data_psalm_Conclave("Data-psalm Conclave", List.of("Data-blessed Autosermon","Mantle of the Gnosticarch","Mechanicus Locum","Temporcopia")),
+        Explorator_Maniple("Explorator Maniple", List.of("Artisan","Genetor","Logis","Magos")),
+        Rad_zone_Corps("Rad-zone Corps", List.of("Autoclavic Denunciation","Malphonic Susurrus","Peerless Eradicator","Radial Suffusion")),
+        Skitarii_Hunter_Cohort("Skitarii Hunter Cohort", List.of("Battle-sphere Uplink","Cantic Thrallnet","Clandestine Infiltrator","Veiled Hunter"));
         
         public final String name;
 
@@ -49,11 +49,11 @@ public class AdeptusMechanicus implements StructuredArmyData.FactionData {
     public enum DataSheets implements StructuredArmyData.DataSheetList {
         Archaeopter_Fusilave("Archaeopter Fusilave"),
         Archaeopter_Stratoraptor("Archaeopter Stratoraptor"),
-        Archaeopter Transvector("Archaeopter Transvector"),
+        Archaeopter_Transvector("Archaeopter Transvector"),
         Belisarius_Cawl("Belisarius Cawl"),
-        Corpuscarii_Electro-Priests("Corpuscarii Electro-Priests"),
+        Corpuscarii_Electro_Priests("Corpuscarii Electro-Priests"),
         Cybernetica_Datasmith("Cybernetica Datasmith"),
-        Fulgurite_Electro-Priests("Fulgurite Electro-Priests"),
+        Fulgurite_Electro_Priests("Fulgurite Electro-Priests"),
         Ironstrider_Ballistarii("Ironstrider Ballistarii"),
         Kastelan_Robots("Kastelan Robots"),
         Kataphron_Breachers("Kataphron Breachers"),
@@ -70,8 +70,8 @@ public class AdeptusMechanicus implements StructuredArmyData.FactionData {
         Skitarii_Vanguard("Skitarii Vanguard"),
         Skorpius_Disintegrator("Skorpius Disintegrator"),
         Skorpius_Dunerider("Skorpius Dunerider"),
-        Sydonian_Dragoons with Radium Jezzails("Sydonian Dragoons with Radium Jezzails"),
-        Sydonian_Dragoons with Taser Lances("Sydonian Dragoons with Taser Lances"),
+        Sydonian_Dragoons_with_Radium_Jezzails("Sydonian Dragoons with Radium Jezzails"),
+        Sydonian_Dragoons_with_Taser_Lances("Sydonian Dragoons with Taser Lances"),
         Sydonian_Skatros("Sydonian Skatros"),
         Tech_Priest_Dominus("Tech-Priest Dominus"),
         Tech_Priest_Enginseer("Tech-Priest Enginseer"),

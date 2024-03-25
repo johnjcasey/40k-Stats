@@ -53,9 +53,9 @@ public class QueryWeekendData {
 
         ValueProvider<String> tempBucket = ValueProvider.StaticValueProvider.of("gs://bcp_beam_temp");
 
-        events.apply(BigQueryIO.<Event>write().to(new TableReference().setProjectId("earnest-smoke-417317").setDatasetId("bcp_data").setTableId("events")).useBeamSchema().withCustomGcsTempLocation(tempBucket));
-        playerAtEvent.apply(BigQueryIO.<PlayerAtEvent>write().to(new TableReference().setProjectId("earnest-smoke-417317").setDatasetId("bcp_data").setTableId("player_at_event")).useBeamSchema().withCustomGcsTempLocation(tempBucket));
-        armyLists.apply(BigQueryIO.<ArmyList>write().to(new TableReference().setProjectId("earnest-smoke-417317").setDatasetId("bcp_data").setTableId("army_lists")).useBeamSchema().withCustomGcsTempLocation(tempBucket));
+        events.apply(BigQueryIO.<Event>write().withWriteDisposition(BigQueryIO.Write.WriteDisposition.WRITE_APPEND).to(new TableReference().setProjectId("earnest-smoke-417317").setDatasetId("bcp_data").setTableId("events")).useBeamSchema().withCustomGcsTempLocation(tempBucket));
+        playerAtEvent.apply(BigQueryIO.<PlayerAtEvent>write().withWriteDisposition(BigQueryIO.Write.WriteDisposition.WRITE_APPEND).to(new TableReference().setProjectId("earnest-smoke-417317").setDatasetId("bcp_data").setTableId("player_at_event")).useBeamSchema().withCustomGcsTempLocation(tempBucket));
+        armyLists.apply(BigQueryIO.<ArmyList>write().withWriteDisposition(BigQueryIO.Write.WriteDisposition.WRITE_APPEND).to(new TableReference().setProjectId("earnest-smoke-417317").setDatasetId("bcp_data").setTableId("army_lists")).useBeamSchema().withCustomGcsTempLocation(tempBucket));
 
         pipeline.run();
     }

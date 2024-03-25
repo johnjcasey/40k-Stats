@@ -5,26 +5,27 @@ import java.util.List;
 public class StructuredArmyData {
     public enum Faction {
         Adeptus_Custodes("Adeptus Custodes", AdeptusCustodes.INSTANCE),
-        Grey_Knights("Grey Knights", null),
+        Grey_Knights("Grey Knights", GreyKnights.INSTANCE),
         Adeptus_Mechanicus("Adeptus Mechanicus", AdeptusMechanicus.INSTANCE),
         Astra_Militarum("Astra Militarum", AstraMilitarum.INSTANCE),
-        Imperial_Knights("Imperial Knights", null),
+        Imperial_Knights("Imperial Knights", ImperialKnights.INSTANCE),
         Adepta_Sororitas("Adepta Sororitas", AdeptaSororitas.INSTANCE),
-        Space_Marines("Space Marines", null),
+        Space_Marines("Space Marines", SpaceMarines.INSTANCE),
+        Agents_Of_The_Imperium("Agents of the Imperium", AgentsOfTheImperium.INSTANCE),
         World_Eaters("World Eaters", WorldEaters.INSTANCE),
-        Thousand_Sons("Thousand Sons", null),
-        Chaos_Space_Marines("Chaos Space Marines", null),
-        Death_Guard("Death Guard", null),
-        Chaos_Knights("Chaos Knights", null),
-        Chaos_Daemons("Chaos Daemons", null),
-        Tau_Empire("T'au Empire", null),
-        Necrons("Necrons", null),
-        Leagues_Of_Votann("Leagues Of Votann", null),
-        Orks("Orks", null),
-        Genestealer_Cult("Genestealer Cult", null),
-        Drukhari("Drukhari", null),
-        Aeldari("Aeldari", Aeldari.INSTANCE),
-        Tyranids("Tyranids", null);
+        Thousand_Sons("Thousand Sons", ThousandSons.INSTANCE),
+        Chaos_Space_Marines("Chaos Space Marines", ChaosSpaceMarines.INSTANCE),
+        Death_Guard("Death Guard", DeathGuard.INSTANCE),
+        Chaos_Knights("Chaos Knights", ChaosKnights.INSTANCE),
+        Chaos_Daemons("Chaos Daemons", ChaosDaemons.INSTANCE),
+        Tau_Empire("T'au Empire", TauEmpire.INSTANCE),
+        Necrons("Necrons", com.github.johnjcasey.data.StructuredArmyData.Necrons.INSTANCE),
+        Leagues_Of_Votann("Leagues Of Votann", LeaguesOfVotann.INSTANCE),
+        Orks("Orks", com.github.johnjcasey.data.StructuredArmyData.Orks.INSTANCE),
+        Genestealer_Cult("Genestealer Cult", GenestealerCults.INSTANCE),
+        Drukhari("Drukhari", com.github.johnjcasey.data.StructuredArmyData.Drukhari.INSTANCE),
+        Aeldari("Aeldari", com.github.johnjcasey.data.StructuredArmyData.Aeldari.INSTANCE),
+        Tyranids("Tyranids", com.github.johnjcasey.data.StructuredArmyData.Tyranids.INSTANCE);
 
         public final String name;
 
@@ -67,40 +68,6 @@ public class StructuredArmyData {
         String getName();
 
         List<String> getEnhancements();
-
-        enum SpaceMarine implements DetachmentList {
-            Gladius_Strike_Force("Gladius Strike Force"),
-            First_Company_Task_Force("First Company Task Force"),
-            Anvil_Siege_Force("Anvil Siege Force"),
-            Ironstorm_Spearhead("Ironstorm Spearhead"),
-            Stormlance_Task_Force("Stormlance Task Force"),
-            Firestorm_Assault_Force("Firestorm Assault Force"),
-            Vanguard_Spearhead("Vanguard Spearhead"),
-            Righteous_Crusaders("Righteous Crusaders"),
-            Sons_of_Sanguinius("Sons of Sanguinius"),
-            Inner_Circle_Task_Force("Inner Circle Task Force"),
-            Company_Of_Hunters("Company of Hunters"),
-            Unforgiven_Task_Force("Unforgiven Task Force"),
-            Black_Spear_Task_Force("Black Spear Task Force"),
-            Champions_of_Russ("Champions of Russ");
-
-            public final String name;
-
-            @Override
-            public String getName() {
-                return name;
-            }
-
-            @Override
-            public List<String> getEnhancements() {
-                return null;
-            }
-
-
-            SpaceMarine(String name) {
-                this.name = name;
-            }
-        }
     }
 
     public interface DataSheetList {

@@ -68,7 +68,7 @@ public class AdeptusCustodes implements StructuredArmyData.FactionData {
         Contemptor_Achillus_Dreadnought("Contemptor-Achillus Dreadnought"),
         Contemptor_Galatus_Dreadnought("Contemptor-Galatus Dreadnought"),
         Coronus_Grav_carrier("Coronus Grav-carrier"),
-        Custodian_Guard_with_Adrasite_and_Pyrithite Spears("Custodian Guard with Adrasite and Pyrithite Spears"),
+        Custodian_Guard_with_Adrasite_and_Pyrithite_Spears("Custodian Guard with Adrasite and Pyrithite Spears"),
         Orion_Assault_Dropship("Orion Assault Dropship"),
         Pallas_Grav_attack("Pallas Grav-attack"),
         Sagittarum_Custodians("Sagittarum Custodians"),

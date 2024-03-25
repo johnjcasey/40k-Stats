@@ -19,7 +19,7 @@ public class Aeldari implements StructuredArmyData.FactionData {
     }
 
     enum Detachments implements StructuredArmyData.DetachmentList {
-        Battle_Host("Battle Host", List.of("Fate’s Messenger","Reader of the Runes","The Phoenix Gem","The Weeping Stones");
+        Battle_Host("Battle Host", List.of("Fate’s Messenger","Reader of the Runes","The Phoenix Gem","The Weeping Stones"));
 
         public final String name;
 
@@ -55,7 +55,7 @@ public class Aeldari implements StructuredArmyData.FactionData {
         Dark_Reapers("Dark Reapers"),
         Death_Jester("Death Jester"),
         Dire_Avengers("Dire Avengers"),
-        Eldrad Ulthran("Eldrad Ulthran"),
+        Eldrad_Ulthran("Eldrad Ulthran"),
         Falcon("Falcon"),
         Farseer("Farseer"),
         Farseer_Skyrunner("Farseer Skyrunner"),
@@ -73,8 +73,8 @@ public class Aeldari implements StructuredArmyData.FactionData {
         Prince_Yriel("Prince Yriel"),
         Rangers("Rangers"),
         Shadowseer("Shadowseer"),
-        Shining Spears("Shining Spears"),
-        Shroud Runners("Shroud Runners"),
+        Shining_Spears("Shining Spears"),
+        Shroud_Runners("Shroud Runners"),
         Skyweavers("Skyweavers"),
         Solitaire("Solitaire"),
         Spiritseer("Spiritseer"),
@@ -89,7 +89,7 @@ public class Aeldari implements StructuredArmyData.FactionData {
         Troupe_Master("Troupe Master"),
         Voidweaver("Voidweaver"),
         Vyper("Vyper"),
-        War Walker("War Walker"),
+        War_Walker("War Walker"),
         Warlock("Warlock"),
         Warlock_Conclave("Warlock Conclave"),
         Warlock_Skyrunner("Warlock Skyrunner"),
