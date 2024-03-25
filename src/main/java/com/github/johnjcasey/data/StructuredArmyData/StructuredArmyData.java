@@ -4,10 +4,10 @@ import java.util.List;
 
 public class StructuredArmyData {
     public enum Faction {
-        Adeptus_Custodes("Adeptus Custodes", null),
+        Adeptus_Custodes("Adeptus Custodes", AdeptusCustodes.INSTANCE),
         Grey_Knights("Grey Knights", null),
-        Adeptus_Mechanicus("Adeptus Mechanicus", null),
-        Astra_Militarum("Astra Militarum", null),
+        Adeptus_Mechanicus("Adeptus Mechanicus", AdeptusMechanicus.INSTANCE),
+        Astra_Militarum("Astra Militarum", AstraMilitarum.INSTANCE),
         Imperial_Knights("Imperial Knights", null),
         Adepta_Sororitas("Adepta Sororitas", AdeptaSororitas.INSTANCE),
         Space_Marines("Space Marines", null),
@@ -23,7 +23,7 @@ public class StructuredArmyData {
         Orks("Orks", null),
         Genestealer_Cult("Genestealer Cult", null),
         Drukhari("Drukhari", null),
-        Aeldari("Aeldari", null),
+        Aeldari("Aeldari", Aeldari.INSTANCE),
         Tyranids("Tyranids", null);
 
         public final String name;
