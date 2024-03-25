@@ -18,6 +18,11 @@ public class WorldEaters implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Chaos_Daemons, StructuredArmyData.Faction.Chaos_Knights);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Berzerker_Warband("Berzerker Warband", List.of("Favoured of Khorne", "Berzerker Glaive", "Battle-lust", "Helm of Brazen Ire"));
 

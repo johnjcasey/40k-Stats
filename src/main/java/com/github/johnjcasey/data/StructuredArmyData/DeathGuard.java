@@ -19,6 +19,11 @@ public class DeathGuard implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Chaos_Daemons, StructuredArmyData.Faction.Chaos_Knights);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Plague_Company("Plague Company", List.of("Deadly Pathogen", "Living Plague", "Shamblerot", "The Droning"));
 

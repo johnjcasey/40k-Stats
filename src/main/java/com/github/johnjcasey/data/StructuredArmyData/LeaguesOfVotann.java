@@ -19,6 +19,11 @@ public class LeaguesOfVotann implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of();
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Oathband("Oathband", List.of("A Long List", "Appraising Glare", "Grim Demeanour", "Wayfarer’s Grace"));
 

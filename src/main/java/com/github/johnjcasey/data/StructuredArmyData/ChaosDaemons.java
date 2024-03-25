@@ -18,6 +18,11 @@ public class ChaosDaemons implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Chaos_Knights);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Daemonic_Incursion("Daemonic Incursion", List.of("A’rgath, the King of Blades","Soulstealer","The Endless Gift","The Everstave"));
        
@@ -34,6 +39,8 @@ public class ChaosDaemons implements StructuredArmyData.FactionData {
         public List<String> getEnhancements() {
             return enhancements;
         }
+
+
 
 
         Detachments(String name, List<String> enhancements){

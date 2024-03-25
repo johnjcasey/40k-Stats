@@ -18,6 +18,11 @@ public class AdeptusCustodes implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Agents_Of_The_Imperium, StructuredArmyData.Faction.Imperial_Knights);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Shield_Host("Shield Host", List.of("Ceaseless Hunter", "Inspirational Exemplar", "Unstoppable Destroyer", "Veiled Blade"));
 

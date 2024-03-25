@@ -7,6 +7,7 @@ import com.github.johnjcasey.data.StructuredArmyList;
 import org.apache.beam.sdk.transforms.DoFn;
 import org.apache.beam.sdk.transforms.PTransform;
 import org.apache.beam.sdk.transforms.ParDo;
+import org.apache.beam.sdk.values.KV;
 import org.apache.beam.sdk.values.PCollection;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.jetbrains.annotations.NotNull;
@@ -15,23 +16,24 @@ import java.util.*;
 
 import static com.github.johnjcasey.data.StructuredArmyData.StructuredArmyData.Faction.*;
 
-public class ParseList extends PTransform<@NonNull PCollection<String>, @NonNull PCollection<StructuredArmyList>> {
+public class ParseList extends PTransform<@NonNull PCollection<KV<String, String>>, @NonNull PCollection<StructuredArmyList>> {
 
     @NotNull
     @Override
-    public PCollection<StructuredArmyList> expand(@NonNull PCollection<String> input) {
+    public PCollection<StructuredArmyList> expand(@NonNull PCollection<KV<String, String>> input) {
         return input.apply(ParDo.of(new ParseListFn()));
     }
 
-    private final class ParseListFn extends DoFn<String, StructuredArmyList> {
+    private final class ParseListFn extends DoFn<KV<String, String>,StructuredArmyList> {
         @ProcessElement
-        public void processElement(@Element String list, OutputReceiver<StructuredArmyList> outputReceiver) {
+        public void processElement(@Element KV<String, String> list, OutputReceiver<StructuredArmyList> outputReceiver) {
             try {
-                List<String> lines = list.lines().toList();
+                List<String> lines = list.getValue().lines().toList();
                 StructuredArmyData.Faction faction = getFaction(lines);
-                StructuredArmyData.DetachmentList detachment = getDetachment(list, faction.factionData.getDetachments());
-                StructuredArmyList armyList = new StructuredArmyList(faction, getSubFaction(list), detachment);
-                populateUnits(lines, faction.factionData.getDataSheets(), detachment, armyList);
+                StructuredArmyData.DetachmentList detachment = getDetachment(list.getValue(), faction.factionData.getDetachments());
+                StructuredArmyData.SubFaction subFaction = getSubFaction(list.getValue());
+                StructuredArmyList armyList = new StructuredArmyList(list.getKey(), faction.name(), null==subFaction?null: subFaction.name(), null==detachment?null:detachment.getName());
+                populateUnits(lines, faction, detachment, armyList);
                 outputReceiver.output(armyList);
             } catch (Exception e) {
                 System.out.println("Unable to parse list: " + list + " Exception: " + e);
@@ -48,7 +50,7 @@ public class ParseList extends PTransform<@NonNull PCollection<String>, @NonNull
                         if (line.toLowerCase().contains(name.toLowerCase()) && !line.contains("Show/Hide") && !line.contains("ALLIED")) {
                             factions.add(maybeFaction);
                         }
-                        if (isFirstLine && !factions.isEmpty()){
+                        if (isFirstLine && !factions.isEmpty()) {
                             lineOneFactions.addAll(factions);
                         }
                     }
@@ -61,7 +63,7 @@ public class ParseList extends PTransform<@NonNull PCollection<String>, @NonNull
             if (factions.size() == 1) {
                 return factions.stream().toList().get(0);
             }
-            if (!lineOneFactions.isEmpty() && factions.size() > lineOneFactions.size()){
+            if (!lineOneFactions.isEmpty() && factions.size() > lineOneFactions.size()) {
                 factions.removeAll(lineOneFactions);
                 if (factions.size() == 1) {
                     return factions.stream().toList().get(0);
@@ -72,15 +74,15 @@ public class ParseList extends PTransform<@NonNull PCollection<String>, @NonNull
                 return Chaos_Space_Marines;
             }
             if (factions.contains(Aeldari) && factions.contains(Drukhari)) {
-                for(String line: list){
-                    if (line.contains("Aeldari - Drukhari")){
+                for (String line : list) {
+                    if (line.contains("Aeldari - Drukhari")) {
                         return Drukhari;
                     }
                 }
                 //Prefer Aeldari as some drukhari weapons include the name drukhari
                 return Aeldari;
             }
-            if (factions.size() == 2 && factions.contains(Agents_Of_The_Imperium)){
+            if (factions.size() == 2 && factions.contains(Agents_Of_The_Imperium)) {
                 factions.remove(Agents_Of_The_Imperium);
                 return factions.stream().toList().get(0);
             }
@@ -115,8 +117,11 @@ public class ParseList extends PTransform<@NonNull PCollection<String>, @NonNull
             return detachmentList;
         }
 
-        private void populateUnits(List<String> list, Class<? extends StructuredArmyData.DataSheetList> dataSheetList, StructuredArmyData.DetachmentList detachment, StructuredArmyList armyList) throws ParseException {
-            List<String> dataSheets = Arrays.stream(dataSheetList.getEnumConstants()).map(StructuredArmyData.DataSheetList::getName).toList();
+        private void populateUnits(List<String> list, StructuredArmyData.Faction faction, StructuredArmyData.DetachmentList detachment, StructuredArmyList armyList) throws ParseException {
+            List<String> dataSheets = new ArrayList<>(Arrays.stream(faction.factionData.getDataSheets().getEnumConstants()).map(StructuredArmyData.DataSheetList::getName).toList());
+            for (StructuredArmyData.Faction ally: faction.factionData.getAllies()){
+                dataSheets.addAll(Arrays.stream(ally.factionData.getDataSheets().getEnumConstants()).map(StructuredArmyData.DataSheetList::getName).toList());
+            }
             List<List<String>> bundled = new ArrayList<>();
             List<String> current = new ArrayList<>();
             //this splits the list into bundles. Some of them are garbage, but most should be full units
@@ -137,7 +142,7 @@ public class ParseList extends PTransform<@NonNull PCollection<String>, @NonNull
                     armyList.addUnit(parsedUnit);
                 }
             }
-            if (armyList.units.isEmpty()){
+            if (armyList.units.isEmpty()) {
                 throw new ParseException("Faction and Detachment have been determined, but no Units found:" + list);
             }
         }

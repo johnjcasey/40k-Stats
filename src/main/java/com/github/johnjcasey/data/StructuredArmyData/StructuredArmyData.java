@@ -61,6 +61,8 @@ public class StructuredArmyData {
         Class<? extends DetachmentList> getDetachments();
 
         Class<? extends DataSheetList> getDataSheets();
+
+        List<Faction> getAllies();
     }
 
     public interface DetachmentList {

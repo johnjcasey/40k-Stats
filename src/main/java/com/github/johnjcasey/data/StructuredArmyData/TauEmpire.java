@@ -19,6 +19,11 @@ public class TauEmpire implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of();
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Kauyon("Kauyon", List.of("Exemplar of the Kauyon", "Precision of the Patient Hunter", "Puretide Engram Neurochip", "Through Unity, Devastation"));
 

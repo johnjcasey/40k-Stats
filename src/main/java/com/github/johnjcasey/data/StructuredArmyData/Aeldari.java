@@ -18,6 +18,11 @@ public class Aeldari implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Aeldari);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Battle_Host("Battle Host", List.of("Fate’s Messenger","Reader of the Runes","The Phoenix Gem","The Weeping Stones"));
 

@@ -19,6 +19,11 @@ public class SpaceMarines implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Agents_Of_The_Imperium, StructuredArmyData.Faction.Imperial_Knights);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         //The name for the Gladius Strike Force is shortened to "Gladius" so it matches Gladius Task Force, which is the name in BattleScribe
         Gladius_Strike_Force("Gladius", List.of("Adept of the Codex", "Artificer Armour", "Fire Discipline", "The Honour Vehement")),

@@ -18,6 +18,11 @@ public class AgentsOfTheImperium implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Imperial_Knights);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         None("None", List.of());
 

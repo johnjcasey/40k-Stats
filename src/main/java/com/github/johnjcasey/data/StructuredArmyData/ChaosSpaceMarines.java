@@ -19,6 +19,11 @@ public class ChaosSpaceMarines implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Chaos_Daemons, StructuredArmyData.Faction.Chaos_Knights);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Slaves_to_Darkness("Slaves to Darkness", List.of("Eye of Tzeentch", "Intoxicating Elixir", "Liber Hereticus", "Orbs of Unlife", "Talisman of Burning Blood"));
 

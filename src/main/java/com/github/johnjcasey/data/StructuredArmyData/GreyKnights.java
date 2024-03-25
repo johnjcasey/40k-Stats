@@ -19,6 +19,11 @@ public class GreyKnights implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Agents_Of_The_Imperium, StructuredArmyData.Faction.Imperial_Knights);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Teleport_Strike_Force("Teleport Strike Force", List.of("Domina Liber Daemonica", "First to the Fray", "Inescapable Wrath", "Sigil of Exigence"));
 

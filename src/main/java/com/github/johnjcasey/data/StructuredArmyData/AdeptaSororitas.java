@@ -18,6 +18,11 @@ public class AdeptaSororitas implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Agents_Of_The_Imperium, StructuredArmyData.Faction.Imperial_Knights);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Hallowed_Martyrs("Hallowed Martyrs", List.of("Saintly Example", "Blade of Saint Ellynor", "Litanies of Faith", "Mantle of Ophelia"));
 
@@ -34,7 +39,6 @@ public class AdeptaSororitas implements StructuredArmyData.FactionData {
         public List<String> getEnhancements() {
             return enhancements;
         }
-
 
         Detachments(String name, List<String> enhancements){
             this.name = name;

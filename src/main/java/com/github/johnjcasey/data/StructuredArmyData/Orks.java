@@ -19,6 +19,11 @@ public class Orks implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of();
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Waaagh_Tribe("Waaagh! Tribe", List.of("Follow Me Ladz", "Headwoppa’s Killchoppa", "Kunnin’ But Brutal", "Supa-Cybork Body"));
 

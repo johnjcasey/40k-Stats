@@ -19,6 +19,11 @@ public class ImperialKnights implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Agents_Of_The_Imperium);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Noble_Lance("Noble Lance", List.of("Banner of Macharius Triumphant", "Mysterious Guardian", "Mythic Hero", "Revered Knight", "Unyielding Paragon"));
 

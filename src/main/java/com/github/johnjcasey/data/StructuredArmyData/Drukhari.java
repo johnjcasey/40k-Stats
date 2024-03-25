@@ -19,6 +19,11 @@ public class Drukhari implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Aeldari);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Realspace_Raiders("Realspace Raiders", List.of("Crucible of Malediction", "Blood Dancer", "Labyrinthine Cunning", "The Art of Pain")),
         Skysplinter_Assault("Skysplinter Assault", List.of("Nightmare Shroud", "Phantasmal Smoke", "Sadistic Fulcrum", "Spiteful Raider"));

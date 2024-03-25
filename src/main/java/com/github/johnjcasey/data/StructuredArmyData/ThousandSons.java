@@ -19,6 +19,11 @@ public class ThousandSons implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Chaos_Daemons, StructuredArmyData.Faction.Chaos_Knights);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Cult_of_Magic("Cult of Magic", List.of("Arcane Vortex", "Athenaean Scrolls", "Lord of Forbidden Lore", "Umbralefic Crystal"));
 

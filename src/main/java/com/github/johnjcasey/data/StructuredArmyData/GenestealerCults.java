@@ -19,6 +19,11 @@ public class GenestealerCults implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Astra_Militarum);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Ascension_Day("Ascension Day", List.of("Focus of Adoration", "Inscrutable Cunning", "Meticulous Planner", "Prowling Agitant"));
 

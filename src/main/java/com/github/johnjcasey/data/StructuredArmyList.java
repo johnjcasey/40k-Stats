@@ -1,6 +1,8 @@
 package com.github.johnjcasey.data;
 
 import com.github.johnjcasey.data.StructuredArmyData.StructuredArmyData;
+import org.apache.beam.sdk.schemas.JavaFieldSchema;
+import org.apache.beam.sdk.schemas.annotations.DefaultSchema;
 
 import javax.annotation.Nullable;
 import java.io.Serializable;
@@ -8,9 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@DefaultSchema(JavaFieldSchema.class)
 public class StructuredArmyList implements Serializable {
 
-    public StructuredArmyList(StructuredArmyData.Faction faction, @Nullable StructuredArmyData.SubFaction subFaction, @Nullable StructuredArmyData.DetachmentList detachmentList) {
+    public StructuredArmyList(){}
+
+    public StructuredArmyList(String playerId, String faction, @Nullable String subFaction, @Nullable String detachmentList) {
+        this.playerId = playerId;
         this.faction = faction;
         this.subFaction = subFaction;
         this.detachmentList = detachmentList;
@@ -20,16 +26,20 @@ public class StructuredArmyList implements Serializable {
         this.units.add(unit);
     }
 
-    public StructuredArmyData.Faction faction;
-    public @Nullable StructuredArmyData.SubFaction subFaction;
+    public String playerId;
 
-    public @Nullable StructuredArmyData.DetachmentList detachmentList;
+    public String faction;
+    public @Nullable String subFaction;
+
+    public @Nullable String detachmentList;
 
     public List<Unit> units = new ArrayList<>();
 
     public static class Unit implements Serializable {
         public String name;
         public @Nullable String enhancement;
+
+        public Unit(){}
 
         public Unit(String name, @Nullable String enhancement) {
             this.name = name;

@@ -19,6 +19,11 @@ public class ChaosKnights implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Chaos_Daemons);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Traitoris_Lance("Traitoris Lance", List.of("Lord of Dread", "Aura of Terror", "The Traitor’s Mark", "Panoply of the Cursed Knight"));
 

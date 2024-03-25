@@ -19,6 +19,11 @@ public class Tyranids implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of();
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Assimilation_Swarm("Assimilation Swarm", List.of("Biophagic Flow", "Instinctive Defence", "Parasitic Biomorphology", "Regenerating Monstrosity")),
         Crusher_Stampede("Crusher Stampede", List.of("Enraged Reserves", "Monstrous Nemesis", "Null Nodules", "Ominous Presence")),

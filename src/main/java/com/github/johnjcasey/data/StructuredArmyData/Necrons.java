@@ -18,6 +18,10 @@ public class Necrons implements StructuredArmyData.FactionData {
     public Class<? extends StructuredArmyData.DataSheetList> getDataSheets() {
         return DataSheets.class;
     }
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of();
+    }
 
     enum Detachments implements StructuredArmyData.DetachmentList {
         Annihilation_Legion("Annihilation Legion", List.of("Eldritch Nightmare","Eternal Madness","Ingrained Superiority","Soulless Reaper")),

@@ -18,6 +18,11 @@ public class AdeptusMechanicus implements StructuredArmyData.FactionData {
         return DataSheets.class;
     }
 
+    @Override
+    public List<StructuredArmyData.Faction> getAllies(){
+        return List.of(StructuredArmyData.Faction.Agents_Of_The_Imperium, StructuredArmyData.Faction.Imperial_Knights);
+    }
+
     enum Detachments implements StructuredArmyData.DetachmentList {
         Cohort_Cybernetica("Cohort Cybernetica", List.of("Arch-negator","Emotionless Clarity","Lord of Machines","Necromechanic")),
         Data_psalm_Conclave("Data-psalm Conclave", List.of("Data-blessed Autosermon","Mantle of the Gnosticarch","Mechanicus Locum","Temporcopia")),
