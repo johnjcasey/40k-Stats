@@ -20,7 +20,8 @@ public class SpaceMarines implements StructuredArmyData.FactionData {
     }
 
     enum Detachments implements StructuredArmyData.DetachmentList {
-        Gladius_Strike_Force("Gladius Strike Force", List.of("Adept of the Codex", "Artificer Armour", "Fire Discipline", "The Honour Vehement")),
+        //The name for the Gladius Strike Force is shortened to "Gladius" so it matches Gladius Task Force, which is the name in BattleScribe
+        Gladius_Strike_Force("Gladius", List.of("Adept of the Codex", "Artificer Armour", "Fire Discipline", "The Honour Vehement")),
         First_Company_Task_Force("1st Company Task Force", List.of("Fear Made Manifest", "Iron Resolve", "Rites of War", "The Imperium’s Sword")),
         Anvil_Siege_Force("Anvil Siege Force", List.of("Architect of War", "Fleet Commander", "Indomitable Fury", "Stoic Defender")),
         Ironstorm_Spearhead("Ironstorm Spearhead", List.of("Adept of the Omnissiah", "Master of Machine War", "Target Augury Web", "The Flesh is Weak")),

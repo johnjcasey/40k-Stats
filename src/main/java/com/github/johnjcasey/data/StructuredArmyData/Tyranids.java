@@ -22,7 +22,8 @@ public class Tyranids implements StructuredArmyData.FactionData {
     enum Detachments implements StructuredArmyData.DetachmentList {
         Assimilation_Swarm("Assimilation Swarm", List.of("Biophagic Flow", "Instinctive Defence", "Parasitic Biomorphology", "Regenerating Monstrosity")),
         Crusher_Stampede("Crusher Stampede", List.of("Enraged Reserves", "Monstrous Nemesis", "Null Nodules", "Ominous Presence")),
-        Invasion_Fleet("Invasion Fleet", List.of("Adaptive Biology", "Alien Cunning", "Perfectly Adapted", "Synaptic Linchpin")),
+        //Typo in GW list builder means that linchpin is spelled incorrectly
+        Invasion_Fleet("Invasion Fleet", List.of("Adaptive Biology", "Alien Cunning", "Perfectly Adapted", "Synaptic Linchpin", "Synaptic Lynchpin")),
         Synaptic_Nexus("Synaptic Nexus", List.of("Power of the Hive Mind", "Psychostatic Disruption", "Synaptic Control", "The Dirgeheart of Kharis")),
         Unending_Swarm("Unending Swarm", List.of("Adrenalised Onslaught", "Naturalised Camouflage", "Piercing Talons", "Relentless Hunger")),
         Vanguard_Onslaught("Vanguard Onslaught", List.of("Chameleonic", "Hunting Grounds", "Neuronode", "Stalker"));

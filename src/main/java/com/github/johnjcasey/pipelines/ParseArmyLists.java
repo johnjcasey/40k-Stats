@@ -2,19 +2,25 @@ package com.github.johnjcasey.pipelines;
 
 import com.github.johnjcasey.data.StructuredArmyList;
 import com.github.johnjcasey.transforms.ParseList;
+import com.google.api.services.bigquery.model.TableReference;
+import com.google.api.services.bigquery.model.TableRow;
 import org.apache.beam.sdk.Pipeline;
+import org.apache.beam.sdk.coders.StringUtf8Coder;
+import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO;
+import org.apache.beam.sdk.io.gcp.bigquery.SchemaAndRecord;
 import org.apache.beam.sdk.options.PipelineOptions;
 import org.apache.beam.sdk.options.PipelineOptionsFactory;
+import org.apache.beam.sdk.options.ValueProvider;
 import org.apache.beam.sdk.transforms.Create;
 import org.apache.beam.sdk.transforms.DoFn;
 import org.apache.beam.sdk.transforms.ParDo;
 
 public class ParseArmyLists {
     public static void main(String[] args) {
-        PipelineOptions options = PipelineOptionsFactory.create();
+        PipelineOptions options = PipelineOptionsFactory.fromArgs(args).create();
         Pipeline pipeline = Pipeline.create(options);
 
-        pipeline.apply(Create.of(TEST_LIST))
+        pipeline.apply(BigQueryIO.read(schemaAndRecord -> (String) schemaAndRecord.getRecord().get("armyListText").toString()).withCoder(StringUtf8Coder.of()).from(new TableReference().setProjectId("earnest-smoke-417317").setDatasetId("bcp_data").setTableId("army_lists")))
                 .apply(new ParseList())
                 .apply(ParDo.of(new DoFn<StructuredArmyList, StructuredArmyList>() {
                     @ProcessElement

@@ -1,5 +1,7 @@
 package com.github.johnjcasey.transforms;
 
+import com.github.johnjcasey.data.StructuredArmyData.Aeldari;
+import com.github.johnjcasey.data.StructuredArmyData.SpaceMarines;
 import com.github.johnjcasey.data.StructuredArmyData.StructuredArmyData;
 import com.github.johnjcasey.data.StructuredArmyList;
 import org.apache.beam.sdk.transforms.DoFn;
@@ -9,9 +11,9 @@ import org.apache.beam.sdk.values.PCollection;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+
+import static com.github.johnjcasey.data.StructuredArmyData.StructuredArmyData.Faction.*;
 
 public class ParseList extends PTransform<@NonNull PCollection<String>, @NonNull PCollection<StructuredArmyList>> {
 
@@ -25,37 +27,70 @@ public class ParseList extends PTransform<@NonNull PCollection<String>, @NonNull
         @ProcessElement
         public void processElement(@Element String list, OutputReceiver<StructuredArmyList> outputReceiver) {
             try {
-                StructuredArmyData.Faction faction = getFaction(list);
+                List<String> lines = list.lines().toList();
+                StructuredArmyData.Faction faction = getFaction(lines);
                 StructuredArmyData.DetachmentList detachment = getDetachment(list, faction.factionData.getDetachments());
                 StructuredArmyList armyList = new StructuredArmyList(faction, getSubFaction(list), detachment);
-                populateUnits(list, faction.factionData.getDataSheets(), detachment, armyList);
+                populateUnits(lines, faction.factionData.getDataSheets(), detachment, armyList);
                 outputReceiver.output(armyList);
-            } catch (ParseException e) {
-                throw new RuntimeException("Unable to Parse List");
+            } catch (Exception e) {
+                System.out.println("Unable to parse list: " + list + " Exception: " + e);
             }
         }
 
-        private StructuredArmyData.Faction getFaction(String list) throws ParseException {
-            StructuredArmyData.Faction faction = null;
-            for (StructuredArmyData.Faction maybeFaction : StructuredArmyData.Faction.values()) {
-                if (list.contains(maybeFaction.name)) {
-                    if (faction == null) {
-                        faction = maybeFaction;
-                    } else {
-                        throw new ParseException("Multiple Factions Found");
+        private StructuredArmyData.Faction getFaction(List<String> list) throws ParseException {
+            Set<StructuredArmyData.Faction> lineOneFactions = new HashSet<>();
+            Set<StructuredArmyData.Faction> factions = new HashSet<>();
+            boolean isFirstLine = true;
+            for (String line : list) {
+                for (StructuredArmyData.Faction maybeFaction : StructuredArmyData.Faction.values()) {
+                    for (String name : maybeFaction.names) {
+                        if (line.toLowerCase().contains(name.toLowerCase()) && !line.contains("Show/Hide") && !line.contains("ALLIED")) {
+                            factions.add(maybeFaction);
+                        }
+                        if (isFirstLine && !factions.isEmpty()){
+                            lineOneFactions.addAll(factions);
+                        }
                     }
                 }
+                isFirstLine = false;
             }
-            if (faction == null) {
+            if (factions.isEmpty()) {
                 throw new ParseException("No Faction Found");
             }
-            return faction;
+            if (factions.size() == 1) {
+                return factions.stream().toList().get(0);
+            }
+            if (!lineOneFactions.isEmpty() && factions.size() > lineOneFactions.size()){
+                factions.removeAll(lineOneFactions);
+                if (factions.size() == 1) {
+                    return factions.stream().toList().get(0);
+                }
+            }
+            //prefer CSM over SM as the CSM name includes SM
+            if (factions.contains(Space_Marines) && factions.contains(Chaos_Space_Marines)) {
+                return Chaos_Space_Marines;
+            }
+            if (factions.contains(Aeldari) && factions.contains(Drukhari)) {
+                for(String line: list){
+                    if (line.contains("Aeldari - Drukhari")){
+                        return Drukhari;
+                    }
+                }
+                //Prefer Aeldari as some drukhari weapons include the name drukhari
+                return Aeldari;
+            }
+            if (factions.size() == 2 && factions.contains(Agents_Of_The_Imperium)){
+                factions.remove(Agents_Of_The_Imperium);
+                return factions.stream().toList().get(0);
+            }
+            throw new ParseException("Multiple Factions Found:" + factions);
         }
 
         private StructuredArmyData.SubFaction getSubFaction(String list) throws ParseException {
             StructuredArmyData.SubFaction subFaction = null;
             for (StructuredArmyData.SubFaction maybeSubFaction : StructuredArmyData.SubFaction.values()) {
-                if (list.contains(maybeSubFaction.name)) {
+                if (list.toLowerCase().contains(maybeSubFaction.name.toLowerCase())) {
                     if (subFaction == null) {
                         subFaction = maybeSubFaction;
                     } else {
@@ -69,7 +104,7 @@ public class ParseList extends PTransform<@NonNull PCollection<String>, @NonNull
         private StructuredArmyData.DetachmentList getDetachment(String list, Class<? extends StructuredArmyData.DetachmentList> detachments) throws ParseException {
             StructuredArmyData.DetachmentList detachmentList = null;
             for (StructuredArmyData.DetachmentList maybeDetachmentList : detachments.getEnumConstants()) {
-                if (list.contains(maybeDetachmentList.getName())) {
+                if (list.toLowerCase().contains(maybeDetachmentList.getName().toLowerCase())) {
                     if (detachmentList == null) {
                         detachmentList = maybeDetachmentList;
                     } else {
@@ -80,18 +115,17 @@ public class ParseList extends PTransform<@NonNull PCollection<String>, @NonNull
             return detachmentList;
         }
 
-        private void populateUnits(String list, Class<? extends StructuredArmyData.DataSheetList> dataSheetList, StructuredArmyData.DetachmentList detachment, StructuredArmyList armyList) {
+        private void populateUnits(List<String> list, Class<? extends StructuredArmyData.DataSheetList> dataSheetList, StructuredArmyData.DetachmentList detachment, StructuredArmyList armyList) throws ParseException {
             List<String> dataSheets = Arrays.stream(dataSheetList.getEnumConstants()).map(StructuredArmyData.DataSheetList::getName).toList();
-            List<String> lines = list.lines().toList();
             List<List<String>> bundled = new ArrayList<>();
             List<String> current = new ArrayList<>();
             //this splits the list into bundles. Some of them are garbage, but most should be full units
             //because of the limits of the parser, some units will have extra lines, such as "OTHER DATASHEETS" at the
             //end
-            for (String line : lines) {
+            for (String line : list) {
                 //This checks if a line starts with a letter, and contains [.*] or (.*).
                 //This matches the first line of a datasheet in either the Battlescribe or the GW format
-                if (line.matches("^[a-zA-Z].*(\\[.*]|\\(.*\\)).*")) {
+                if (line.matches("^.*[a-zA-Z].*(\\[.*]|\\(.*\\)).*")) {
                     bundled.add(current);
                     current = new ArrayList<>();
                 }
@@ -103,26 +137,32 @@ public class ParseList extends PTransform<@NonNull PCollection<String>, @NonNull
                     armyList.addUnit(parsedUnit);
                 }
             }
+            if (armyList.units.isEmpty()){
+                throw new ParseException("Faction and Detachment have been determined, but no Units found:" + list);
+            }
         }
     }
 
     private StructuredArmyList.Unit parseBundle(List<String> bundle, List<String> dataSheets, StructuredArmyData.DetachmentList detachment) {
+        if (bundle.isEmpty()) {
+            return null;
+        }
         String unitNameLine = bundle.get(0);
         String sheet = null;
         String enhancement = null;
         for (String dataSheet : dataSheets) {
-            if (unitNameLine.contains(dataSheet)) {
+            if (unitNameLine.toLowerCase().contains(dataSheet.toLowerCase())) {
                 sheet = dataSheet;
             }
         }
         //Enhancements in GW are on a separate line
         enhancement = bundle.stream().filter(s -> s.contains("Enhancement")).findFirst().map(s -> {
             for (String detachmentEnhancement : detachment.getEnhancements()) {
-                if (unitNameLine.contains(detachmentEnhancement)) {
+                if (s.toLowerCase().contains(detachmentEnhancement.toLowerCase())) {
                     return detachmentEnhancement;
                 }
             }
-            throw new RuntimeException("Line with Enhancement found, but no matching enhancement");
+            return null;
         }).orElse(null);
 
         //Enhancements in Battlescribe are on the unit name line

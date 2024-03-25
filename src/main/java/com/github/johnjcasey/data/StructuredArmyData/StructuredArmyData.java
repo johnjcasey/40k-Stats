@@ -4,35 +4,35 @@ import java.util.List;
 
 public class StructuredArmyData {
     public enum Faction {
-        Adeptus_Custodes("Adeptus Custodes", AdeptusCustodes.INSTANCE),
-        Grey_Knights("Grey Knights", GreyKnights.INSTANCE),
-        Adeptus_Mechanicus("Adeptus Mechanicus", AdeptusMechanicus.INSTANCE),
-        Astra_Militarum("Astra Militarum", AstraMilitarum.INSTANCE),
-        Imperial_Knights("Imperial Knights", ImperialKnights.INSTANCE),
-        Adepta_Sororitas("Adepta Sororitas", AdeptaSororitas.INSTANCE),
-        Space_Marines("Space Marines", SpaceMarines.INSTANCE),
-        Agents_Of_The_Imperium("Agents of the Imperium", AgentsOfTheImperium.INSTANCE),
-        World_Eaters("World Eaters", WorldEaters.INSTANCE),
-        Thousand_Sons("Thousand Sons", ThousandSons.INSTANCE),
-        Chaos_Space_Marines("Chaos Space Marines", ChaosSpaceMarines.INSTANCE),
-        Death_Guard("Death Guard", DeathGuard.INSTANCE),
-        Chaos_Knights("Chaos Knights", ChaosKnights.INSTANCE),
-        Chaos_Daemons("Chaos Daemons", ChaosDaemons.INSTANCE),
-        Tau_Empire("T'au Empire", TauEmpire.INSTANCE),
-        Necrons("Necrons", com.github.johnjcasey.data.StructuredArmyData.Necrons.INSTANCE),
-        Leagues_Of_Votann("Leagues Of Votann", LeaguesOfVotann.INSTANCE),
-        Orks("Orks", com.github.johnjcasey.data.StructuredArmyData.Orks.INSTANCE),
-        Genestealer_Cult("Genestealer Cult", GenestealerCults.INSTANCE),
-        Drukhari("Drukhari", com.github.johnjcasey.data.StructuredArmyData.Drukhari.INSTANCE),
-        Aeldari("Aeldari", com.github.johnjcasey.data.StructuredArmyData.Aeldari.INSTANCE),
-        Tyranids("Tyranids", com.github.johnjcasey.data.StructuredArmyData.Tyranids.INSTANCE);
+        Adeptus_Custodes(List.of("Adeptus Custodes"), AdeptusCustodes.INSTANCE),
+        Grey_Knights(List.of("Grey Knights"), GreyKnights.INSTANCE),
+        Adeptus_Mechanicus(List.of("Adeptus Mechanicus"), AdeptusMechanicus.INSTANCE),
+        Astra_Militarum(List.of("Astra Militarum"), AstraMilitarum.INSTANCE),
+        Imperial_Knights(List.of("Imperial Knights"), ImperialKnights.INSTANCE),
+        Adepta_Sororitas(List.of("Adepta Sororitas"), AdeptaSororitas.INSTANCE),
+        Space_Marines(List.of("Space Marines", "Adeptus Astartes", "Dark Angels", "Black Templars", "Space Wolves", "Deathwatch", "Blood Angels"), SpaceMarines.INSTANCE),
+        Agents_Of_The_Imperium(List.of("Agents of the Imperium"), AgentsOfTheImperium.INSTANCE),
+        World_Eaters(List.of("World Eaters"), WorldEaters.INSTANCE),
+        Thousand_Sons(List.of("Thousand Sons"), ThousandSons.INSTANCE),
+        Chaos_Space_Marines(List.of("Chaos Space Marines"), ChaosSpaceMarines.INSTANCE),
+        Death_Guard(List.of("Death Guard"), DeathGuard.INSTANCE),
+        Chaos_Knights(List.of("Chaos Knights"), ChaosKnights.INSTANCE),
+        Chaos_Daemons(List.of("Chaos Daemons", "Legiones Daemonica"), ChaosDaemons.INSTANCE),
+        Tau_Empire(List.of("T’au Empire","T'au Empire"), TauEmpire.INSTANCE),
+        Necrons(List.of("Necrons"), com.github.johnjcasey.data.StructuredArmyData.Necrons.INSTANCE),
+        Leagues_Of_Votann(List.of("Leagues of Votann"), LeaguesOfVotann.INSTANCE),
+        Orks(List.of("Orks"), com.github.johnjcasey.data.StructuredArmyData.Orks.INSTANCE),
+        Genestealer_Cult(List.of("Genestealer Cult"), GenestealerCults.INSTANCE),
+        Drukhari(List.of("Drukhari"), com.github.johnjcasey.data.StructuredArmyData.Drukhari.INSTANCE),
+        Aeldari(List.of("Aeldari"), com.github.johnjcasey.data.StructuredArmyData.Aeldari.INSTANCE),
+        Tyranids(List.of("Tyranids"), com.github.johnjcasey.data.StructuredArmyData.Tyranids.INSTANCE);
 
-        public final String name;
+        public final List<String> names;
 
         public final FactionData factionData;
 
-        Faction(String name, FactionData factionData) {
-            this.name = name;
+        Faction(List<String> names, FactionData factionData) {
+            this.names = names;
             this.factionData = factionData;
         }
     }
