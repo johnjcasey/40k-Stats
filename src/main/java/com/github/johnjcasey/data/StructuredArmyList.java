@@ -13,7 +13,14 @@ import java.util.Objects;
 @DefaultSchema(JavaFieldSchema.class)
 public class StructuredArmyList implements Serializable {
 
-    public String playerId;
+    public @Nullable String userId;
+    public @Nullable String playerId;
+    public @Nullable ArmyList.EventMetadata event;
+
+    public @Nullable ArmyList.User user;
+
+    public @Nullable String listId;
+
     public String faction;
     public @Nullable String subFaction;
     public @Nullable String detachment;
@@ -23,12 +30,17 @@ public class StructuredArmyList implements Serializable {
     public StructuredArmyList() {
     }
 
-    public StructuredArmyList(String playerId, String faction, @Nullable String subFaction, @Nullable String detachment) {
+    public StructuredArmyList(@Nullable String userId, @Nullable String playerId, @Nullable ArmyList.EventMetadata event, @Nullable ArmyList.User user, @Nullable String listId, String faction, @Nullable String subFaction, @Nullable String detachment) {
+        this.userId = userId;
         this.playerId = playerId;
+        this.event = event;
+        this.user = user;
+        this.listId = listId;
         this.faction = faction;
         this.subFaction = subFaction;
         this.detachment = detachment;
         queryDate = Instant.now();
+
     }
 
     public void addUnit(Unit unit) {
@@ -38,7 +50,11 @@ public class StructuredArmyList implements Serializable {
     @Override
     public String toString() {
         return "StructuredArmyList{" +
-                "playerId='" + playerId + '\'' +
+                "userId='" + userId + '\'' +
+                ", playerId='" + playerId + '\'' +
+                ", event=" + event +
+                ", user=" + user +
+                ", listId='" + listId + '\'' +
                 ", faction='" + faction + '\'' +
                 ", subFaction='" + subFaction + '\'' +
                 ", detachment='" + detachment + '\'' +
@@ -52,12 +68,12 @@ public class StructuredArmyList implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         StructuredArmyList armyList = (StructuredArmyList) o;
-        return Objects.equals(playerId, armyList.playerId) && Objects.equals(faction, armyList.faction) && Objects.equals(subFaction, armyList.subFaction) && Objects.equals(detachment, armyList.detachment) && Objects.equals(units, armyList.units) && Objects.equals(queryDate, armyList.queryDate);
+        return Objects.equals(userId, armyList.userId) && Objects.equals(playerId, armyList.playerId) && Objects.equals(event, armyList.event) && Objects.equals(user, armyList.user) && Objects.equals(listId, armyList.listId) && Objects.equals(faction, armyList.faction) && Objects.equals(subFaction, armyList.subFaction) && Objects.equals(detachment, armyList.detachment) && Objects.equals(units, armyList.units) && Objects.equals(queryDate, armyList.queryDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(playerId, faction, subFaction, detachment, units, queryDate);
+        return Objects.hash(userId, playerId, event, user, listId, faction, subFaction, detachment, units, queryDate);
     }
 
     public static class Unit implements Serializable {

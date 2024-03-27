@@ -1,11 +1,11 @@
 package com.github.johnjcasey.transforms;
 
+import com.github.johnjcasey.data.ArmyList;
 import com.github.johnjcasey.data.StructuredArmyData.StructuredArmyData;
 import com.github.johnjcasey.data.StructuredArmyList;
 import org.apache.beam.sdk.transforms.DoFn;
 import org.apache.beam.sdk.transforms.PTransform;
 import org.apache.beam.sdk.transforms.ParDo;
-import org.apache.beam.sdk.values.KV;
 import org.apache.beam.sdk.values.PCollection;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.jetbrains.annotations.NotNull;
@@ -14,11 +14,11 @@ import java.util.*;
 
 import static com.github.johnjcasey.data.StructuredArmyData.StructuredArmyData.Faction.*;
 
-public class ParseList extends PTransform<@NonNull PCollection<KV<String, String>>, @NonNull PCollection<StructuredArmyList>> {
+public class ParseList extends PTransform<@NonNull PCollection<ArmyList>, @NonNull PCollection<StructuredArmyList>> {
 
     @NotNull
     @Override
-    public PCollection<StructuredArmyList> expand(@NonNull PCollection<KV<String, String>> input) {
+    public PCollection<StructuredArmyList> expand(@NonNull PCollection<ArmyList> input) {
         return input.apply(ParDo.of(new ParseListFn()));
     }
 
@@ -64,15 +64,15 @@ public class ParseList extends PTransform<@NonNull PCollection<KV<String, String
         }
     }
 
-    private final class ParseListFn extends DoFn<KV<String, String>, StructuredArmyList> {
+    private final class ParseListFn extends DoFn<ArmyList, StructuredArmyList> {
         @ProcessElement
-        public void processElement(@Element KV<String, String> list, OutputReceiver<StructuredArmyList> outputReceiver) {
+        public void processElement(@Element ArmyList list, OutputReceiver<StructuredArmyList> outputReceiver) {
             try {
-                List<String> lines = list.getValue().lines().toList();
+                List<String> lines = list.armyListText.lines().toList();
                 StructuredArmyData.Faction faction = getFaction(lines);
-                StructuredArmyData.DetachmentList detachment = getDetachment(list.getValue(), faction.factionData.getDetachments());
-                StructuredArmyData.SubFaction subFaction = getSubFaction(list.getValue());
-                StructuredArmyList armyList = new StructuredArmyList(list.getKey(), faction.name(), null == subFaction ? null : subFaction.name(), null == detachment ? null : detachment.getName());
+                StructuredArmyData.DetachmentList detachment = getDetachment(list.armyListText, faction.factionData.getDetachments());
+                StructuredArmyData.SubFaction subFaction = getSubFaction(list.armyListText);
+                StructuredArmyList armyList = new StructuredArmyList(list.userId, list.playerId, list.event, list.user, list.id, faction.name(), null == subFaction ? null : subFaction.name(), null == detachment ? null : detachment.getName());
                 populateUnits(lines, faction, detachment, armyList);
                 outputReceiver.output(armyList);
             } catch (Exception e) {

@@ -72,7 +72,7 @@ public class TauEmpire implements StructuredArmyData.FactionData {
         Krootox_Riders("Krootox Riders"),
         Longstrike("Longstrike"),
         Pathfinder_Team("Pathfinder Team"),
-        Piranhas("Piranhas"),
+        Piranha("Piranha"),
         Razorshark_Strike_Fighter("Razorshark Strike Fighter"),
         Riptide_Battlesuit("Riptide Battlesuit"),
         Sky_Ray_Gunship("Sky Ray Gunship"),
