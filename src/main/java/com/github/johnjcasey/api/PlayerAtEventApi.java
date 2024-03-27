@@ -15,23 +15,23 @@ import java.util.List;
 public class PlayerAtEventApi {
 
     public static final PlayerAtEventApi INSTANCE = new PlayerAtEventApi();
-
-    private PlayerAtEventApi(){};
-
     private static final HttpClient client = HttpClient.newHttpClient();
 
     private static final Gson gson = new Gson();
+
+    private PlayerAtEventApi() {
+    }
 
     public List<PlayerAtEvent> get(String eventId) throws IOException, InterruptedException, URISyntaxException {
         List<JsonArray> rawEvents = getRawPlayers(eventId);
         return parseAndFlattenPlayers(rawEvents);
     }
 
-    private List<JsonArray> getRawPlayers(String eventId) throws IOException, InterruptedException, URISyntaxException{
+    private List<JsonArray> getRawPlayers(String eventId) throws IOException, InterruptedException, URISyntaxException {
         List<JsonArray> rawPlayers = new ArrayList<>();
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI("https://newprod-api.bestcoastpairings.com/v1/players?limit=100&eventId="+eventId+"&placings=true&expand%5B%5D=team&expand%5B%5D=army&expand%5B%5D=subFaction&expand%5B%5D=character"))
+                .uri(new URI("https://newprod-api.bestcoastpairings.com/v1/players?limit=100&eventId=" + eventId + "&placings=true&expand%5B%5D=team&expand%5B%5D=army&expand%5B%5D=subFaction&expand%5B%5D=character"))
                 .header("Client-Id", "259e2q22frfasni9dtjb9q3i7a")
                 .build();
 
@@ -41,10 +41,10 @@ public class PlayerAtEventApi {
         JsonObject response = JsonParser.parseString(rawResponse.body()).getAsJsonObject();
         JsonArray responseData = response.get("data").getAsJsonArray();
         rawPlayers.add(responseData);
-        while (responseData.size()==100){
+        while (responseData.size() == 100) {
             String nextKey = response.get("nextKey").getAsJsonPrimitive().getAsString();
             request = HttpRequest.newBuilder()
-                    .uri(new URI("https://newprod-api.bestcoastpairings.com/v1/players?limit=100&eventId="+eventId+"&placings=true&expand%5B%5D=team&expand%5B%5D=army&expand%5B%5D=subFaction&expand%5B%5D=character&nextKey="+nextKey))
+                    .uri(new URI("https://newprod-api.bestcoastpairings.com/v1/players?limit=100&eventId=" + eventId + "&placings=true&expand%5B%5D=team&expand%5B%5D=army&expand%5B%5D=subFaction&expand%5B%5D=character&nextKey=" + nextKey))
                     .header("Client-Id", "259e2q22frfasni9dtjb9q3i7a")
                     .build();
 
@@ -56,11 +56,14 @@ public class PlayerAtEventApi {
         return rawPlayers;
     }
 
-    private List<PlayerAtEvent> parseAndFlattenPlayers(List<JsonArray> rawPlayers){
+    private List<PlayerAtEvent> parseAndFlattenPlayers(List<JsonArray> rawPlayers) {
+        org.joda.time.Instant now = new org.joda.time.Instant();
         List<PlayerAtEvent> events = new ArrayList<>();
-        for (JsonArray array : rawPlayers){
-            for (JsonElement element :array.asList()){
-                events.add(gson.fromJson(element,PlayerAtEvent.class));
+        for (JsonArray array : rawPlayers) {
+            for (JsonElement element : array.asList()) {
+                PlayerAtEvent playerAtEvent = gson.fromJson(element, PlayerAtEvent.class);
+                playerAtEvent.queryDate = now;
+                events.add(playerAtEvent);
             }
         }
         return events;

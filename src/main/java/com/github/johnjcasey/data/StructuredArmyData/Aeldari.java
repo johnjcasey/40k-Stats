@@ -6,7 +6,8 @@ public class Aeldari implements StructuredArmyData.FactionData {
 
     public static Aeldari INSTANCE = new Aeldari();
 
-    private Aeldari(){}
+    private Aeldari() {
+    }
 
     @Override
     public Class<? extends StructuredArmyData.DetachmentList> getDetachments() {
@@ -19,31 +20,30 @@ public class Aeldari implements StructuredArmyData.FactionData {
     }
 
     @Override
-    public List<StructuredArmyData.Faction> getAllies(){
+    public List<StructuredArmyData.Faction> getAllies() {
         return List.of(StructuredArmyData.Faction.Aeldari);
     }
 
     enum Detachments implements StructuredArmyData.DetachmentList {
-        Battle_Host("Battle Host", List.of("Fate’s Messenger","Reader of the Runes","The Phoenix Gem","The Weeping Stones"));
+        Battle_Host("Battle Host", List.of("Fate’s Messenger", "Reader of the Runes", "The Phoenix Gem", "The Weeping Stones"));
 
         public final String name;
 
         public final List<String> enhancements;
 
+        Detachments(String name, List<String> enhancements) {
+            this.name = name;
+            this.enhancements = enhancements;
+        }
+
         @Override
-        public String getName(){
+        public String getName() {
             return name;
         }
 
         @Override
         public List<String> getEnhancements() {
             return enhancements;
-        }
-
-
-        Detachments(String name, List<String> enhancements){
-            this.name = name;
-            this.enhancements = enhancements;
         }
     }
 
@@ -120,7 +120,7 @@ public class Aeldari implements StructuredArmyData.FactionData {
         Revenant_Titan("Revenant Titan"),
         Warp_Hunter("Warp Hunter"),
         Wraithseer("Wraithseer");
- 
+
 
         public String name;
 

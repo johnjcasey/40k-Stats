@@ -6,7 +6,8 @@ public class ChaosDaemons implements StructuredArmyData.FactionData {
 
     public static ChaosDaemons INSTANCE = new ChaosDaemons();
 
-    private ChaosDaemons(){}
+    private ChaosDaemons() {
+    }
 
     @Override
     public Class<? extends StructuredArmyData.DetachmentList> getDetachments() {
@@ -19,33 +20,30 @@ public class ChaosDaemons implements StructuredArmyData.FactionData {
     }
 
     @Override
-    public List<StructuredArmyData.Faction> getAllies(){
+    public List<StructuredArmyData.Faction> getAllies() {
         return List.of(StructuredArmyData.Faction.Chaos_Knights);
     }
 
     enum Detachments implements StructuredArmyData.DetachmentList {
-        Daemonic_Incursion("Daemonic Incursion", List.of("A’rgath, the King of Blades","Soulstealer","The Endless Gift","The Everstave"));
-       
+        Daemonic_Incursion("Daemonic Incursion", List.of("A’rgath, the King of Blades", "Soulstealer", "The Endless Gift", "The Everstave"));
+
         public final String name;
 
         public final List<String> enhancements;
 
+        Detachments(String name, List<String> enhancements) {
+            this.name = name;
+            this.enhancements = enhancements;
+        }
+
         @Override
-        public String getName(){
+        public String getName() {
             return name;
         }
 
         @Override
         public List<String> getEnhancements() {
             return enhancements;
-        }
-
-
-
-
-        Detachments(String name, List<String> enhancements){
-            this.name = name;
-            this.enhancements = enhancements;
         }
     }
 

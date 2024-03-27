@@ -1,7 +1,5 @@
 package com.github.johnjcasey.transforms;
 
-import com.github.johnjcasey.data.StructuredArmyData.Aeldari;
-import com.github.johnjcasey.data.StructuredArmyData.SpaceMarines;
 import com.github.johnjcasey.data.StructuredArmyData.StructuredArmyData;
 import com.github.johnjcasey.data.StructuredArmyList;
 import org.apache.beam.sdk.transforms.DoFn;
@@ -24,7 +22,49 @@ public class ParseList extends PTransform<@NonNull PCollection<KV<String, String
         return input.apply(ParDo.of(new ParseListFn()));
     }
 
-    private final class ParseListFn extends DoFn<KV<String, String>,StructuredArmyList> {
+    private StructuredArmyList.Unit parseBundle(List<String> bundle, List<String> dataSheets, StructuredArmyData.DetachmentList detachment) {
+        if (bundle.isEmpty()) {
+            return null;
+        }
+        String unitNameLine = bundle.get(0);
+        String sheet = null;
+        String enhancement = null;
+        for (String dataSheet : dataSheets) {
+            if (unitNameLine.toLowerCase().contains(dataSheet.toLowerCase())) {
+                sheet = dataSheet;
+            }
+        }
+        //Enhancements in GW are on a separate line
+        enhancement = bundle.stream().filter(s -> s.contains("Enhancement")).findFirst().map(s -> {
+            for (String detachmentEnhancement : detachment.getEnhancements()) {
+                if (s.toLowerCase().contains(detachmentEnhancement.toLowerCase())) {
+                    return detachmentEnhancement;
+                }
+            }
+            return null;
+        }).orElse(null);
+
+        //Enhancements in Battlescribe are on the unit name line
+        for (String detachmentEnhancement : detachment.getEnhancements()) {
+            if (unitNameLine.contains(detachmentEnhancement)) {
+                enhancement = detachmentEnhancement;
+            }
+        }
+
+        if (null != sheet) {
+            return new StructuredArmyList.Unit(sheet, enhancement, String.join("\n", bundle));
+        } else {
+            return null;
+        }
+    }
+
+    private static class ParseException extends Exception {
+        private ParseException(String exception) {
+            super(exception);
+        }
+    }
+
+    private final class ParseListFn extends DoFn<KV<String, String>, StructuredArmyList> {
         @ProcessElement
         public void processElement(@Element KV<String, String> list, OutputReceiver<StructuredArmyList> outputReceiver) {
             try {
@@ -32,7 +72,7 @@ public class ParseList extends PTransform<@NonNull PCollection<KV<String, String
                 StructuredArmyData.Faction faction = getFaction(lines);
                 StructuredArmyData.DetachmentList detachment = getDetachment(list.getValue(), faction.factionData.getDetachments());
                 StructuredArmyData.SubFaction subFaction = getSubFaction(list.getValue());
-                StructuredArmyList armyList = new StructuredArmyList(list.getKey(), faction.name(), null==subFaction?null: subFaction.name(), null==detachment?null:detachment.getName());
+                StructuredArmyList armyList = new StructuredArmyList(list.getKey(), faction.name(), null == subFaction ? null : subFaction.name(), null == detachment ? null : detachment.getName());
                 populateUnits(lines, faction, detachment, armyList);
                 outputReceiver.output(armyList);
             } catch (Exception e) {
@@ -119,7 +159,7 @@ public class ParseList extends PTransform<@NonNull PCollection<KV<String, String
 
         private void populateUnits(List<String> list, StructuredArmyData.Faction faction, StructuredArmyData.DetachmentList detachment, StructuredArmyList armyList) throws ParseException {
             List<String> dataSheets = new ArrayList<>(Arrays.stream(faction.factionData.getDataSheets().getEnumConstants()).map(StructuredArmyData.DataSheetList::getName).toList());
-            for (StructuredArmyData.Faction ally: faction.factionData.getAllies()){
+            for (StructuredArmyData.Faction ally : faction.factionData.getAllies()) {
                 dataSheets.addAll(Arrays.stream(ally.factionData.getDataSheets().getEnumConstants()).map(StructuredArmyData.DataSheetList::getName).toList());
             }
             List<List<String>> bundled = new ArrayList<>();
@@ -145,48 +185,6 @@ public class ParseList extends PTransform<@NonNull PCollection<KV<String, String
             if (armyList.units.isEmpty()) {
                 throw new ParseException("Faction and Detachment have been determined, but no Units found:" + list);
             }
-        }
-    }
-
-    private StructuredArmyList.Unit parseBundle(List<String> bundle, List<String> dataSheets, StructuredArmyData.DetachmentList detachment) {
-        if (bundle.isEmpty()) {
-            return null;
-        }
-        String unitNameLine = bundle.get(0);
-        String sheet = null;
-        String enhancement = null;
-        for (String dataSheet : dataSheets) {
-            if (unitNameLine.toLowerCase().contains(dataSheet.toLowerCase())) {
-                sheet = dataSheet;
-            }
-        }
-        //Enhancements in GW are on a separate line
-        enhancement = bundle.stream().filter(s -> s.contains("Enhancement")).findFirst().map(s -> {
-            for (String detachmentEnhancement : detachment.getEnhancements()) {
-                if (s.toLowerCase().contains(detachmentEnhancement.toLowerCase())) {
-                    return detachmentEnhancement;
-                }
-            }
-            return null;
-        }).orElse(null);
-
-        //Enhancements in Battlescribe are on the unit name line
-        for (String detachmentEnhancement : detachment.getEnhancements()) {
-            if (unitNameLine.contains(detachmentEnhancement)) {
-                enhancement = detachmentEnhancement;
-            }
-        }
-
-        if (null != sheet) {
-            return new StructuredArmyList.Unit(sheet, enhancement);
-        } else {
-            return null;
-        }
-    }
-
-    private static class ParseException extends Exception {
-        private ParseException(String exception) {
-            super(exception);
         }
     }
 }

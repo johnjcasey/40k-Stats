@@ -26,7 +26,7 @@ public class QueryEvents extends PTransform<@NonNull PCollection<KV<Instant, Ins
     @Override
     public PCollection<Event> expand(@NotNull PCollection<KV<Instant, Instant>> input) {
         return input
-                .apply(RequestResponseIO.of(new EventApiCaller(), ListCoder.of(getSchemaCoder(input.getPipeline(),Event.class))))
+                .apply(RequestResponseIO.of(new EventApiCaller(), ListCoder.of(getSchemaCoder(input.getPipeline(), Event.class))))
                 .getResponses()
                 .apply(Flatten.iterables());
     }

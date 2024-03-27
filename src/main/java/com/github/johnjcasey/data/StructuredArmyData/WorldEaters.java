@@ -6,7 +6,8 @@ public class WorldEaters implements StructuredArmyData.FactionData {
 
     public static WorldEaters INSTANCE = new WorldEaters();
 
-    private WorldEaters(){}
+    private WorldEaters() {
+    }
 
     @Override
     public Class<? extends StructuredArmyData.DetachmentList> getDetachments() {
@@ -19,7 +20,7 @@ public class WorldEaters implements StructuredArmyData.FactionData {
     }
 
     @Override
-    public List<StructuredArmyData.Faction> getAllies(){
+    public List<StructuredArmyData.Faction> getAllies() {
         return List.of(StructuredArmyData.Faction.Chaos_Daemons, StructuredArmyData.Faction.Chaos_Knights);
     }
 
@@ -30,20 +31,19 @@ public class WorldEaters implements StructuredArmyData.FactionData {
 
         public final List<String> enhancements;
 
+        Detachments(String name, List<String> enhancements) {
+            this.name = name;
+            this.enhancements = enhancements;
+        }
+
         @Override
-        public String getName(){
+        public String getName() {
             return name;
         }
 
         @Override
         public List<String> getEnhancements() {
             return enhancements;
-        }
-
-
-        Detachments(String name, List<String> enhancements){
-            this.name = name;
-            this.enhancements = enhancements;
         }
     }
 

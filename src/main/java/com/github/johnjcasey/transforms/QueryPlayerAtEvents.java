@@ -27,12 +27,13 @@ public class QueryPlayerAtEvents extends PTransform<PCollection<Event>, PCollect
                 .getResponses()
                 .apply(ParDo.of(new DoFn<KV<Event, List<PlayerAtEvent>>, PlayerAtEvent>() {
                     @ProcessElement
-                    public void processElement(@Element KV<Event, List<PlayerAtEvent>> element, OutputReceiver< PlayerAtEvent> outputReceiver) {
+                    public void processElement(@Element KV<Event, List<PlayerAtEvent>> element, OutputReceiver<PlayerAtEvent> outputReceiver) {
                         for (PlayerAtEvent player : element.getValue()) {
-                            if (player.eventId == null) {
-                                player.eventId = element.getKey().id;
+                            PlayerAtEvent clone = player.clone();
+                            if (clone.eventId == null) {
+                                clone.eventId = element.getKey().id;
                             }
-                            outputReceiver.output(player);
+                            outputReceiver.output(clone);
                         }
                     }
                 }));

@@ -1,8 +1,8 @@
 package com.github.johnjcasey.data;
 
-import com.github.johnjcasey.data.StructuredArmyData.StructuredArmyData;
 import org.apache.beam.sdk.schemas.JavaFieldSchema;
 import org.apache.beam.sdk.schemas.annotations.DefaultSchema;
+import org.joda.time.Instant;
 
 import javax.annotation.Nullable;
 import java.io.Serializable;
@@ -13,37 +13,66 @@ import java.util.Objects;
 @DefaultSchema(JavaFieldSchema.class)
 public class StructuredArmyList implements Serializable {
 
-    public StructuredArmyList(){}
+    public String playerId;
+    public String faction;
+    public @Nullable String subFaction;
+    public @Nullable String detachment;
+    public List<Unit> units = new ArrayList<>();
+    public @Nullable Instant queryDate;
 
-    public StructuredArmyList(String playerId, String faction, @Nullable String subFaction, @Nullable String detachmentList) {
+    public StructuredArmyList() {
+    }
+
+    public StructuredArmyList(String playerId, String faction, @Nullable String subFaction, @Nullable String detachment) {
         this.playerId = playerId;
         this.faction = faction;
         this.subFaction = subFaction;
-        this.detachmentList = detachmentList;
+        this.detachment = detachment;
+        queryDate = Instant.now();
     }
 
     public void addUnit(Unit unit) {
         this.units.add(unit);
     }
 
-    public String playerId;
+    @Override
+    public String toString() {
+        return "StructuredArmyList{" +
+                "playerId='" + playerId + '\'' +
+                ", faction='" + faction + '\'' +
+                ", subFaction='" + subFaction + '\'' +
+                ", detachment='" + detachment + '\'' +
+                ", units=" + units +
+                ", queryDate=" + queryDate +
+                '}';
+    }
 
-    public String faction;
-    public @Nullable String subFaction;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StructuredArmyList armyList = (StructuredArmyList) o;
+        return Objects.equals(playerId, armyList.playerId) && Objects.equals(faction, armyList.faction) && Objects.equals(subFaction, armyList.subFaction) && Objects.equals(detachment, armyList.detachment) && Objects.equals(units, armyList.units) && Objects.equals(queryDate, armyList.queryDate);
+    }
 
-    public @Nullable String detachmentList;
-
-    public List<Unit> units = new ArrayList<>();
+    @Override
+    public int hashCode() {
+        return Objects.hash(playerId, faction, subFaction, detachment, units, queryDate);
+    }
 
     public static class Unit implements Serializable {
         public String name;
         public @Nullable String enhancement;
 
-        public Unit(){}
+        public @Nullable String unitText;
 
-        public Unit(String name, @Nullable String enhancement) {
+        public Unit() {
+        }
+
+        public Unit(String name, @Nullable String enhancement, @Nullable String unitText) {
             this.name = name;
             this.enhancement = enhancement;
+            this.unitText = unitText;
         }
 
         @Override
@@ -66,28 +95,5 @@ public class StructuredArmyList implements Serializable {
         public int hashCode() {
             return Objects.hash(name, enhancement);
         }
-    }
-
-    @Override
-    public String toString() {
-        return "StructuredArmyList{" +
-                "faction=" + faction +
-                ", subFaction=" + subFaction +
-                ", detachment=" + detachmentList +
-                ", units=" + units +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        StructuredArmyList that = (StructuredArmyList) o;
-        return faction == that.faction && subFaction == that.subFaction && Objects.equals(detachmentList, that.detachmentList) && Objects.equals(units, that.units);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(faction, subFaction, detachmentList, units);
     }
 }

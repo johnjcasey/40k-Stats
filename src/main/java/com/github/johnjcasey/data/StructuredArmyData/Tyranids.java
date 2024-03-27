@@ -20,7 +20,7 @@ public class Tyranids implements StructuredArmyData.FactionData {
     }
 
     @Override
-    public List<StructuredArmyData.Faction> getAllies(){
+    public List<StructuredArmyData.Faction> getAllies() {
         return List.of();
     }
 
@@ -37,6 +37,11 @@ public class Tyranids implements StructuredArmyData.FactionData {
 
         public final List<String> enhancements;
 
+        Detachments(String name, List<String> enhancements) {
+            this.name = name;
+            this.enhancements = enhancements;
+        }
+
         @Override
         public String getName() {
             return name;
@@ -45,12 +50,6 @@ public class Tyranids implements StructuredArmyData.FactionData {
         @Override
         public List<String> getEnhancements() {
             return enhancements;
-        }
-
-
-        Detachments(String name, List<String> enhancements) {
-            this.name = name;
-            this.enhancements = enhancements;
         }
     }
 

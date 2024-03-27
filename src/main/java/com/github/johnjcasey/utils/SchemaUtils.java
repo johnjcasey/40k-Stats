@@ -9,16 +9,17 @@ import org.apache.beam.sdk.values.TypeDescriptor;
 
 public class SchemaUtils {
 
-    private SchemaUtils(){}
+    private SchemaUtils() {
+    }
 
-    public static <T> Coder<T> getSchemaCoder(Pipeline pipeline, Class<T> clazz){
+    public static <T> Coder<T> getSchemaCoder(Pipeline pipeline, Class<T> clazz) {
         try {
             return SchemaCoder.of(
                     pipeline.getSchemaRegistry().getSchema(clazz),
                     TypeDescriptor.of(clazz),
                     pipeline.getSchemaRegistry().getToRowFunction(clazz),
                     pipeline.getSchemaRegistry().getFromRowFunction(clazz));
-        } catch (NoSuchSchemaException e){
+        } catch (NoSuchSchemaException e) {
             throw new RuntimeException(e);
         }
     }

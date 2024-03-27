@@ -18,7 +18,7 @@ public class StructuredArmyData {
         Death_Guard(List.of("Death Guard"), DeathGuard.INSTANCE),
         Chaos_Knights(List.of("Chaos Knights"), ChaosKnights.INSTANCE),
         Chaos_Daemons(List.of("Chaos Daemons", "Legiones Daemonica"), ChaosDaemons.INSTANCE),
-        Tau_Empire(List.of("T’au Empire","T'au Empire"), TauEmpire.INSTANCE),
+        Tau_Empire(List.of("T’au Empire", "T'au Empire"), TauEmpire.INSTANCE),
         Necrons(List.of("Necrons"), com.github.johnjcasey.data.StructuredArmyData.Necrons.INSTANCE),
         Leagues_Of_Votann(List.of("Leagues of Votann"), LeaguesOfVotann.INSTANCE),
         Orks(List.of("Orks"), com.github.johnjcasey.data.StructuredArmyData.Orks.INSTANCE),

@@ -18,21 +18,27 @@ public class Necrons implements StructuredArmyData.FactionData {
     public Class<? extends StructuredArmyData.DataSheetList> getDataSheets() {
         return DataSheets.class;
     }
+
     @Override
-    public List<StructuredArmyData.Faction> getAllies(){
+    public List<StructuredArmyData.Faction> getAllies() {
         return List.of();
     }
 
     enum Detachments implements StructuredArmyData.DetachmentList {
-        Annihilation_Legion("Annihilation Legion", List.of("Eldritch Nightmare","Eternal Madness","Ingrained Superiority","Soulless Reaper")),
-        Awakened_Dynasty("Awakened Dynasty", List.of("Enaegic Dermal Bond","Nether-realm Casket","Phasal Subjugator","Veil of Darkness")),
-        Canoptek_Court("Canoptek Court", List.of("Autodivinator","Dimensional Sanctum","Hyperphasic Fulcrum","Metalodermal Tesla Weave")),
-        Hypercrypt_Legion("Hypercrypt Legion", List.of("Arisen Tyrant","Dimensional Overseer","Hyperspatial Transfer Node","Osteoclave Fulcrum")),
-        Obeisance_Phalanx("Obeisance Phalanx", List.of("Eternal Conqueror","Honourable Combatant","Unflinching Will","Warrior Noble"));
+        Annihilation_Legion("Annihilation Legion", List.of("Eldritch Nightmare", "Eternal Madness", "Ingrained Superiority", "Soulless Reaper")),
+        Awakened_Dynasty("Awakened Dynasty", List.of("Enaegic Dermal Bond", "Nether-realm Casket", "Phasal Subjugator", "Veil of Darkness")),
+        Canoptek_Court("Canoptek Court", List.of("Autodivinator", "Dimensional Sanctum", "Hyperphasic Fulcrum", "Metalodermal Tesla Weave")),
+        Hypercrypt_Legion("Hypercrypt Legion", List.of("Arisen Tyrant", "Dimensional Overseer", "Hyperspatial Transfer Node", "Osteoclave Fulcrum")),
+        Obeisance_Phalanx("Obeisance Phalanx", List.of("Eternal Conqueror", "Honourable Combatant", "Unflinching Will", "Warrior Noble"));
 
         public final String name;
 
         public final List<String> enhancements;
+
+        Detachments(String name, List<String> enhancements) {
+            this.name = name;
+            this.enhancements = enhancements;
+        }
 
         @Override
         public String getName() {
@@ -42,12 +48,6 @@ public class Necrons implements StructuredArmyData.FactionData {
         @Override
         public List<String> getEnhancements() {
             return enhancements;
-        }
-
-
-        Detachments(String name, List<String> enhancements) {
-            this.name = name;
-            this.enhancements = enhancements;
         }
     }
 

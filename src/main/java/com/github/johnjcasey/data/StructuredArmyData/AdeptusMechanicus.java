@@ -6,7 +6,8 @@ public class AdeptusMechanicus implements StructuredArmyData.FactionData {
 
     public static AdeptusMechanicus INSTANCE = new AdeptusMechanicus();
 
-    private AdeptusMechanicus(){}
+    private AdeptusMechanicus() {
+    }
 
     @Override
     public Class<? extends StructuredArmyData.DetachmentList> getDetachments() {
@@ -19,35 +20,34 @@ public class AdeptusMechanicus implements StructuredArmyData.FactionData {
     }
 
     @Override
-    public List<StructuredArmyData.Faction> getAllies(){
+    public List<StructuredArmyData.Faction> getAllies() {
         return List.of(StructuredArmyData.Faction.Agents_Of_The_Imperium, StructuredArmyData.Faction.Imperial_Knights);
     }
 
     enum Detachments implements StructuredArmyData.DetachmentList {
-        Cohort_Cybernetica("Cohort Cybernetica", List.of("Arch-negator","Emotionless Clarity","Lord of Machines","Necromechanic")),
-        Data_psalm_Conclave("Data-psalm Conclave", List.of("Data-blessed Autosermon","Mantle of the Gnosticarch","Mechanicus Locum","Temporcopia")),
-        Explorator_Maniple("Explorator Maniple", List.of("Artisan","Genetor","Logis","Magos")),
-        Rad_zone_Corps("Rad-zone Corps", List.of("Autoclavic Denunciation","Malphonic Susurrus","Peerless Eradicator","Radial Suffusion")),
-        Skitarii_Hunter_Cohort("Skitarii Hunter Cohort", List.of("Battle-sphere Uplink","Cantic Thrallnet","Clandestine Infiltrator","Veiled Hunter"));
-        
+        Cohort_Cybernetica("Cohort Cybernetica", List.of("Arch-negator", "Emotionless Clarity", "Lord of Machines", "Necromechanic")),
+        Data_psalm_Conclave("Data-psalm Conclave", List.of("Data-blessed Autosermon", "Mantle of the Gnosticarch", "Mechanicus Locum", "Temporcopia")),
+        Explorator_Maniple("Explorator Maniple", List.of("Artisan", "Genetor", "Logis", "Magos")),
+        Rad_zone_Corps("Rad-zone Corps", List.of("Autoclavic Denunciation", "Malphonic Susurrus", "Peerless Eradicator", "Radial Suffusion")),
+        Skitarii_Hunter_Cohort("Skitarii Hunter Cohort", List.of("Battle-sphere Uplink", "Cantic Thrallnet", "Clandestine Infiltrator", "Veiled Hunter"));
+
         public final String name;
 
         public final List<String> enhancements;
 
+        Detachments(String name, List<String> enhancements) {
+            this.name = name;
+            this.enhancements = enhancements;
+        }
+
         @Override
-        public String getName(){
+        public String getName() {
             return name;
         }
 
         @Override
         public List<String> getEnhancements() {
             return enhancements;
-        }
-
-
-        Detachments(String name, List<String> enhancements){
-            this.name = name;
-            this.enhancements = enhancements;
         }
     }
 

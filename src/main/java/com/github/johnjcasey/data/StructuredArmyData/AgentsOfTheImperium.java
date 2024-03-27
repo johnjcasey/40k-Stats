@@ -6,7 +6,8 @@ public class AgentsOfTheImperium implements StructuredArmyData.FactionData {
 
     public static AgentsOfTheImperium INSTANCE = new AgentsOfTheImperium();
 
-    private AgentsOfTheImperium(){}
+    private AgentsOfTheImperium() {
+    }
 
     @Override
     public Class<? extends StructuredArmyData.DetachmentList> getDetachments() {
@@ -19,7 +20,7 @@ public class AgentsOfTheImperium implements StructuredArmyData.FactionData {
     }
 
     @Override
-    public List<StructuredArmyData.Faction> getAllies(){
+    public List<StructuredArmyData.Faction> getAllies() {
         return List.of(StructuredArmyData.Faction.Imperial_Knights);
     }
 
@@ -30,20 +31,19 @@ public class AgentsOfTheImperium implements StructuredArmyData.FactionData {
 
         public final List<String> enhancements;
 
+        Detachments(String name, List<String> enhancements) {
+            this.name = name;
+            this.enhancements = enhancements;
+        }
+
         @Override
-        public String getName(){
+        public String getName() {
             return name;
         }
 
         @Override
         public List<String> getEnhancements() {
             return enhancements;
-        }
-
-
-        Detachments(String name, List<String> enhancements){
-            this.name = name;
-            this.enhancements = enhancements;
         }
     }
 
