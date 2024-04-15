@@ -32,11 +32,11 @@ public class QueryWeekendData {
                 .apply(ParDo.of(new DoFn<byte[], KV<Instant, Instant>>() {
                     @ProcessElement
                     public void processElement(OutputReceiver<KV<Instant, Instant>> outputReceiver) {
-                        outputReceiver.output(KV.of(Instant.now().minus(7 * 6, ChronoUnit.DAYS), Instant.now()));
+                        outputReceiver.output(KV.of(Instant.now().minus(6, ChronoUnit.DAYS), Instant.now()));
                     }
                 })).apply(new QueryEvents())
                 //filter to events that fired, and are GT sized
-                .apply(Filter.by(event -> event.started && event.ended && event.totalPlayers >= 25 && event.numberOfRounds >= 5));
+                .apply(Filter.by(event -> event.started && event.totalPlayers >= 25 && event.numberOfRounds >= 5));
 
         PCollection<PlayerAtEvent> playerAtEvent = events.apply(new QueryPlayerAtEvents());
 

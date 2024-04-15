@@ -1,6 +1,8 @@
 package com.github.johnjcasey.transforms;
 
 import com.github.johnjcasey.data.ArmyList;
+import com.github.johnjcasey.data.StructuredArmyData.ChaosDaemons;
+import com.github.johnjcasey.data.StructuredArmyData.ImperialKnights;
 import com.github.johnjcasey.data.StructuredArmyData.StructuredArmyData;
 import com.github.johnjcasey.data.StructuredArmyList;
 import org.apache.beam.sdk.transforms.DoFn;
@@ -83,12 +85,20 @@ public class ParseList extends PTransform<@NonNull PCollection<ArmyList>, @NonNu
         private StructuredArmyData.Faction getFaction(List<String> list) throws ParseException {
             Set<StructuredArmyData.Faction> lineOneFactions = new HashSet<>();
             Set<StructuredArmyData.Faction> factions = new HashSet<>();
+            StructuredArmyData.Faction firstFoundFaction = null;
             boolean isFirstLine = true;
+            boolean probablyWTCHeader = false;
             for (String line : list) {
                 for (StructuredArmyData.Faction maybeFaction : StructuredArmyData.Faction.values()) {
                     for (String name : maybeFaction.names) {
                         if (line.toLowerCase().contains(name.toLowerCase()) && !line.contains("Show/Hide") && !line.contains("ALLIED")) {
                             factions.add(maybeFaction);
+                            if (null == firstFoundFaction){
+                                firstFoundFaction = maybeFaction;
+                            }
+                            if (line.toLowerCase().contains("used")){
+                                probablyWTCHeader = true;
+                            }
                         }
                         if (isFirstLine && !factions.isEmpty()) {
                             lineOneFactions.addAll(factions);
@@ -119,13 +129,68 @@ public class ParseList extends PTransform<@NonNull PCollection<ArmyList>, @NonNu
                         return Drukhari;
                     }
                 }
-                //Prefer Aeldari as some drukhari weapons include the name drukhari
-                return Aeldari;
+                return firstFoundFaction;
             }
+            // START Imperial Allies
+            if (factions.size() == 3 && factions.contains(Imperial_Knights) && factions.contains(Agents_Of_The_Imperium)){
+                factions.remove(Imperial_Knights);
+                factions.remove(Agents_Of_The_Imperium);
+                return factions.stream().toList().get(0);
+            }
+            if (factions.size() == 2 && factions.contains(Imperial_Knights) && !factions.contains(Agents_Of_The_Imperium)){
+                factions.remove(Imperial_Knights);
+                return factions.stream().toList().get(0);
+            }
+            // We assume no agents armies, and I'm not worried about the 3 people a year playing them for auto-parsing
             if (factions.size() == 2 && factions.contains(Agents_Of_The_Imperium)) {
                 factions.remove(Agents_Of_The_Imperium);
                 return factions.stream().toList().get(0);
             }
+            // END Imperial Allies
+            // START Chaos Allies
+            if (factions.size() == 3 && factions.contains(Chaos_Daemons) && factions.contains(Chaos_Knights)){
+                factions.remove(Chaos_Daemons);
+                factions.remove(Chaos_Knights);
+                return factions.stream().toList().get(0);
+            }
+            if (factions.size() == 2 && factions.contains(Chaos_Daemons) && !factions.contains(Chaos_Knights)){
+                factions.remove(Chaos_Daemons);
+                return factions.stream().toList().get(0);
+            }
+            if (factions.size() == 2 && !factions.contains(Chaos_Daemons) && factions.contains(Chaos_Knights)){
+                factions.remove(Chaos_Knights);
+                return factions.stream().toList().get(0);
+            }
+            //Prefer the first of Daemons and Knights in the WTC Header
+            if (factions.size() == 2 && factions.contains(Chaos_Daemons) && factions.contains(Chaos_Knights) && probablyWTCHeader){
+                for (String line: list){
+                    //grab the WTC Header line
+                    if (line.toLowerCase().contains("used")){
+                        int daemonIndex = Integer.MAX_VALUE;
+                        for (String name: Chaos_Daemons.names){
+                            daemonIndex = Integer.min(daemonIndex, line.indexOf(name));
+                        }
+                        int knightsIndex = Integer.MAX_VALUE;
+                        for (String name: Chaos_Knights.names){
+                            knightsIndex = Integer.min(knightsIndex, line.indexOf(name));
+                        }
+                        if (-1 == daemonIndex && -1 == knightsIndex){
+                            throw new ParseException("Neither Daemons nor Knights could be found in the WTC Header");
+                        }
+                        if (-1 == daemonIndex){
+                            return Chaos_Knights;
+                        }
+                        if (-1 == knightsIndex){
+                            return Chaos_Daemons;
+                        }
+                        if (daemonIndex < knightsIndex){
+                            return Chaos_Daemons;
+                        }
+                        return Chaos_Knights;
+                    }
+                }
+            }
+            // END Chaos Allies
             throw new ParseException("Multiple Factions Found:" + factions);
         }
 
@@ -150,7 +215,7 @@ public class ParseList extends PTransform<@NonNull PCollection<ArmyList>, @NonNu
                     if (detachmentList == null) {
                         detachmentList = maybeDetachmentList;
                     } else {
-                        throw new ParseException("Multiple Detachments Found");
+                        throw new ParseException("Multiple Detachments Found: " + detachmentList + ", " + maybeDetachmentList);
                     }
                 }
             }

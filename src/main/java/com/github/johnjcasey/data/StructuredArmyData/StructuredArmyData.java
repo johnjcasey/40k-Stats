@@ -4,7 +4,7 @@ import java.util.List;
 
 public class StructuredArmyData {
     public enum Faction {
-        Adeptus_Custodes(List.of("Adeptus Custodes"), AdeptusCustodes.INSTANCE),
+        Adeptus_Custodes(List.of("Adeptus Custodes", "Custodes"), AdeptusCustodes.INSTANCE),
         Grey_Knights(List.of("Grey Knights"), GreyKnights.INSTANCE),
         Adeptus_Mechanicus(List.of("Adeptus Mechanicus"), AdeptusMechanicus.INSTANCE),
         Astra_Militarum(List.of("Astra Militarum"), AstraMilitarum.INSTANCE),
@@ -17,7 +17,7 @@ public class StructuredArmyData {
         Chaos_Space_Marines(List.of("Chaos Space Marines"), ChaosSpaceMarines.INSTANCE),
         Death_Guard(List.of("Death Guard"), DeathGuard.INSTANCE),
         Chaos_Knights(List.of("Chaos Knights"), ChaosKnights.INSTANCE),
-        Chaos_Daemons(List.of("Chaos Daemons", "Legiones Daemonica"), ChaosDaemons.INSTANCE),
+        Chaos_Daemons(List.of("Chaos Daemons", "Legiones Daemonica", "Daemons"), ChaosDaemons.INSTANCE),
         Tau_Empire(List.of("T’au Empire", "T'au Empire"), TauEmpire.INSTANCE),
         Necrons(List.of("Necrons"), com.github.johnjcasey.data.StructuredArmyData.Necrons.INSTANCE),
         Leagues_Of_Votann(List.of("Leagues of Votann"), LeaguesOfVotann.INSTANCE),
