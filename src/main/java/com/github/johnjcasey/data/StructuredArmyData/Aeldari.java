@@ -21,7 +21,7 @@ public class Aeldari implements StructuredArmyData.FactionData {
 
     @Override
     public List<StructuredArmyData.Faction> getAllies() {
-        return List.of(StructuredArmyData.Faction.Aeldari);
+        return List.of(StructuredArmyData.Faction.Drukhari);
     }
 
     enum Detachments implements StructuredArmyData.DetachmentList {
