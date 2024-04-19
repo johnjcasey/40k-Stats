@@ -1,6 +1,6 @@
-package com.github.johnjcasey.api;
+package com.github.johnjcasey.api.bcp;
 
-import com.github.johnjcasey.data.ArmyList;
+import com.github.johnjcasey.data.bcp.ArmyList;
 import com.google.gson.Gson;
 
 import java.io.FileInputStream;

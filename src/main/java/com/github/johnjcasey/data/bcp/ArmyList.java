@@ -1,4 +1,4 @@
-package com.github.johnjcasey.data;
+package com.github.johnjcasey.data.bcp;
 
 import org.apache.beam.sdk.schemas.JavaFieldSchema;
 import org.apache.beam.sdk.schemas.annotations.DefaultSchema;
@@ -39,6 +39,20 @@ public class ArmyList implements Serializable {
         return Objects.hash(userId, playerId, armyListText, event);
     }
 
+    @Override
+    public String toString() {
+        return "ArmyList{" +
+                "userId='" + userId + '\'' +
+                ", playerId='" + playerId + '\'' +
+                ", armyListText='" + armyListText + '\'' +
+                ", event=" + event +
+                ", user=" + user +
+                ", id='" + id + '\'' +
+                ", link='" + link + '\'' +
+                ", queryDate=" + queryDate +
+                '}';
+    }
+
     public static class EventMetadata implements Serializable {
         public @Nullable String id;
 
@@ -55,6 +69,14 @@ public class ArmyList implements Serializable {
         @Override
         public int hashCode() {
             return Objects.hash(id, name);
+        }
+
+        @Override
+        public String toString() {
+            return "EventMetadata{" +
+                    "id='" + id + '\'' +
+                    ", name='" + name + '\'' +
+                    '}';
         }
     }
 
@@ -78,7 +100,14 @@ public class ArmyList implements Serializable {
             return Objects.hash(id, firstName, lastName);
         }
 
-
+        @Override
+        public String toString() {
+            return "User{" +
+                    "id='" + id + '\'' +
+                    ", firstName='" + firstName + '\'' +
+                    ", lastName='" + lastName + '\'' +
+                    '}';
+        }
     }
 
 }

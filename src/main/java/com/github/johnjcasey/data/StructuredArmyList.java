@@ -1,7 +1,10 @@
 package com.github.johnjcasey.data;
 
+import com.github.johnjcasey.data.StructuredArmyData.StructuredArmyData;
+import com.github.johnjcasey.data.bcp.ArmyList;
 import org.apache.beam.sdk.schemas.JavaFieldSchema;
 import org.apache.beam.sdk.schemas.annotations.DefaultSchema;
+import org.checkerframework.checker.nullness.qual.NonNull;
 import org.joda.time.Instant;
 
 import javax.annotation.Nullable;
@@ -24,7 +27,9 @@ public class StructuredArmyList implements Serializable {
     public String faction;
     public @Nullable String subFaction;
     public @Nullable String detachment;
-    public List<Unit> units = new ArrayList<>();
+
+    public @NonNull List<String> allies = new ArrayList<>();
+    public @NonNull List<Unit> units = new ArrayList<>();
     public @Nullable Instant queryDate;
 
     public StructuredArmyList() {
@@ -45,6 +50,10 @@ public class StructuredArmyList implements Serializable {
 
     public void addUnit(Unit unit) {
         this.units.add(unit);
+    }
+
+    public void addAlly(StructuredArmyData.Faction faction){
+        allies.add(faction.name());
     }
 
     @Override

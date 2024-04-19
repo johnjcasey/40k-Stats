@@ -1,4 +1,4 @@
-package com.github.johnjcasey.data;
+package com.github.johnjcasey.data.bcp;
 
 import org.apache.beam.sdk.schemas.JavaFieldSchema;
 import org.apache.beam.sdk.schemas.annotations.DefaultSchema;
@@ -39,5 +39,20 @@ public class Event implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(totalPlayers, name, id, started, ended, numberOfRounds, eventDate, link, queryDate);
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "totalPlayers=" + totalPlayers +
+                ", name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", started=" + started +
+                ", ended=" + ended +
+                ", numberOfRounds=" + numberOfRounds +
+                ", eventDate=" + eventDate +
+                ", link='" + link + '\'' +
+                ", queryDate=" + queryDate +
+                '}';
     }
 }

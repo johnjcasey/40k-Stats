@@ -1,6 +1,6 @@
-package com.github.johnjcasey.api;
+package com.github.johnjcasey.api.bcp;
 
-import com.github.johnjcasey.data.PlayerAtEvent;
+import com.github.johnjcasey.data.bcp.PlayerAtEvent;
 import com.google.gson.*;
 
 import java.io.IOException;

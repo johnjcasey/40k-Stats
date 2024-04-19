@@ -1,7 +1,7 @@
-package com.github.johnjcasey.transforms;
+package com.github.johnjcasey.transforms.bcp;
 
-import com.github.johnjcasey.api.EventApi;
-import com.github.johnjcasey.data.Event;
+import com.github.johnjcasey.api.bcp.EventApi;
+import com.github.johnjcasey.data.bcp.Event;
 import org.apache.beam.io.requestresponse.Caller;
 import org.apache.beam.io.requestresponse.RequestResponseIO;
 import org.apache.beam.io.requestresponse.UserCodeExecutionException;

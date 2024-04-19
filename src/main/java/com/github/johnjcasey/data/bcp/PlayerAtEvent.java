@@ -1,7 +1,8 @@
-package com.github.johnjcasey.data;
+package com.github.johnjcasey.data.bcp;
 
 import org.apache.beam.sdk.schemas.JavaFieldSchema;
 import org.apache.beam.sdk.schemas.annotations.DefaultSchema;
+import org.checkerframework.checker.units.qual.N;
 import org.joda.time.Instant;
 
 import javax.annotation.Nullable;
@@ -24,10 +25,14 @@ public class PlayerAtEvent implements Serializable {
 
     public @Nullable Army army;
 
+    public @Nullable Integer placing;
+
     public @Nullable String armyListObjectId;
     public @Nullable List<Game> total_games;
 
     public @Nullable Map<@org.checkerframework.checker.nullness.qual.Nullable String, @org.checkerframework.checker.nullness.qual.Nullable String> opponentIds;
+
+    public @Nullable Double numWins;
 
     public @Nullable Instant queryDate;
 
@@ -44,6 +49,24 @@ public class PlayerAtEvent implements Serializable {
         return Objects.hash(name, userId, playerId, eventId, team, army, armyListObjectId, total_games, opponentIds, queryDate);
     }
 
+    @Override
+    public String toString() {
+        return "PlayerAtEvent{" +
+                "name='" + name + '\'' +
+                ", userId='" + userId + '\'' +
+                ", playerId='" + playerId + '\'' +
+                ", eventId='" + eventId + '\'' +
+                ", team=" + team +
+                ", army=" + army +
+                ", placing=" + placing +
+                ", armyListObjectId='" + armyListObjectId + '\'' +
+                ", total_games=" + total_games +
+                ", opponentIds=" + opponentIds +
+                ", numWins=" + numWins +
+                ", queryDate=" + queryDate +
+                '}';
+    }
+
     public PlayerAtEvent clone(){
         PlayerAtEvent playerAtEvent = new PlayerAtEvent();
         playerAtEvent.name = name;
@@ -54,7 +77,7 @@ public class PlayerAtEvent implements Serializable {
         playerAtEvent.army = army;
         playerAtEvent.armyListObjectId = armyListObjectId;
         playerAtEvent.total_games = total_games;
-        playerAtEvent. opponentIds = opponentIds;
+        playerAtEvent.opponentIds = opponentIds;
         playerAtEvent.queryDate = queryDate;
         return playerAtEvent;
     }
