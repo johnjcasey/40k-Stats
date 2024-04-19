@@ -40,13 +40,13 @@ public class PlayerAtEvent implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PlayerAtEvent that = (PlayerAtEvent) o;
-        return Objects.equals(name, that.name) && Objects.equals(userId, that.userId) && Objects.equals(playerId, that.playerId) && Objects.equals(eventId, that.eventId) && Objects.equals(team, that.team) && Objects.equals(army, that.army) && Objects.equals(armyListObjectId, that.armyListObjectId) && Objects.equals(total_games, that.total_games) && Objects.equals(opponentIds, that.opponentIds) && Objects.equals(queryDate, that.queryDate);
+        PlayerAtEvent player = (PlayerAtEvent) o;
+        return Objects.equals(name, player.name) && Objects.equals(userId, player.userId) && Objects.equals(playerId, player.playerId) && Objects.equals(eventId, player.eventId) && Objects.equals(team, player.team) && Objects.equals(army, player.army) && Objects.equals(placing, player.placing) && Objects.equals(armyListObjectId, player.armyListObjectId) && Objects.equals(total_games, player.total_games) && Objects.equals(opponentIds, player.opponentIds) && Objects.equals(numWins, player.numWins) && Objects.equals(queryDate, player.queryDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, userId, playerId, eventId, team, army, armyListObjectId, total_games, opponentIds, queryDate);
+        return Objects.hash(name, userId, playerId, eventId, team, army, placing, armyListObjectId, total_games, opponentIds, numWins, queryDate);
     }
 
     @Override
@@ -79,6 +79,8 @@ public class PlayerAtEvent implements Serializable {
         playerAtEvent.total_games = total_games;
         playerAtEvent.opponentIds = opponentIds;
         playerAtEvent.queryDate = queryDate;
+        playerAtEvent.placing = placing;
+        playerAtEvent.numWins = numWins;
         return playerAtEvent;
     }
 

@@ -9,6 +9,8 @@ import org.apache.beam.sdk.transforms.ParDo;
 import org.apache.beam.sdk.values.PCollection;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+import java.util.Objects;
+
 public class GeneratePlayers extends PTransform<@NonNull PCollection<EventWithPlayersAndLists>, @NonNull PCollection<Player>> {
     @Override
     public @NonNull PCollection<Player> expand(@NonNull PCollection<EventWithPlayersAndLists> input) {
@@ -27,7 +29,9 @@ public class GeneratePlayers extends PTransform<@NonNull PCollection<EventWithPl
                 player.eventName = epl.event.name;
                 player.eventId = epl.event.id;
                 if (null != pal.parsedList) {
-                    player.faction = pal.parsedList.faction;
+                    player.parsedFaction = pal.parsedList.parsedFaction;
+                    player.declaredFaction = pal.parsedList.declaredFaction;
+                    player.factionsMatch = Objects.equals(player.parsedFaction, player.declaredFaction);
                     player.detachment = pal.parsedList.detachment;
                     player.allies = pal.parsedList.allies;
                 }

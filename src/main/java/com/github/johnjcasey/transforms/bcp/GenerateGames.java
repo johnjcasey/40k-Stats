@@ -10,6 +10,7 @@ import org.apache.beam.sdk.transforms.PTransform;
 import org.apache.beam.sdk.transforms.ParDo;
 import org.apache.beam.sdk.values.KV;
 import org.apache.beam.sdk.values.PCollection;
+import org.apache.kafka.common.protocol.types.Field;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.HashMap;
@@ -30,8 +31,9 @@ public class GenerateGames extends PTransform<@NonNull PCollection<EventWithPlay
             }
             for (PlayerAndList playerAndList : epl.playersWithList) {
                 PlayerAtEvent player = playerAndList.player;
-                for (PlayerAtEvent.Game bcpGame: player.total_games){
-                    String opponentId = player.opponentIds.get(String.valueOf(bcpGame.gameNum));
+                for (int i = 0; i < player.total_games.size(); i++){
+                    PlayerAtEvent.Game bcpGame = player.total_games.get(i);
+                    String opponentId = player.opponentIds.get(String.valueOf(i+1));
                     Game game = new Game();
                     game.eventDate = epl.event.eventDate;
                     game.queryDate = epl.event.queryDate;
@@ -48,7 +50,7 @@ public class GenerateGames extends PTransform<@NonNull PCollection<EventWithPlay
                         PlayerAtEvent opponent = opponentAndList.player;
                         game.opponent.id = opponent.userId;
                         game.opponent.name = opponent.name;
-                        game.opponent.score = opponent.total_games.get(bcpGame.gameNum - 1).gamePoints;
+                        game.opponent.score = opponent.total_games.get(i).gamePoints;
                     }
                     outputReceiver.output(game);
                 }

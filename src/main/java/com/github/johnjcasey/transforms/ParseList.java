@@ -5,6 +5,7 @@ import com.github.johnjcasey.data.StructuredArmyList;
 import com.github.johnjcasey.data.bcp.ArmyList;
 import com.github.johnjcasey.data.bcp.EventWithPlayersAndLists;
 import com.github.johnjcasey.data.bcp.PlayerAndList;
+import com.github.johnjcasey.data.bcp.PlayerAtEvent;
 import org.apache.beam.repackaged.core.org.apache.commons.lang3.tuple.Pair;
 import org.apache.beam.sdk.transforms.DoFn;
 import org.apache.beam.sdk.transforms.PTransform;
@@ -94,11 +95,20 @@ public class ParseList extends PTransform<@NonNull PCollection<EventWithPlayersA
                 ArmyList list = pal.list;
                 try {
                     List<String> lines = list.armyListText.lines().toList();
-                    StructuredArmyData.Faction faction = getFaction(lines);
-                    StructuredArmyData.DetachmentList detachment = getDetachment(list.armyListText, faction.factionData.getDetachments());
+                    StructuredArmyData.Faction declaredFaction = getDeclaredFaction(newPal.player);
+                    StructuredArmyData.Faction parsedFaction = getParsedFaction(lines, declaredFaction);
+                    StructuredArmyData.Faction factionForParsing;
+                    if (null != parsedFaction) {
+                        factionForParsing = parsedFaction;
+                    } else if (null != declaredFaction) {
+                        factionForParsing = parsedFaction;
+                    } else {
+                        throw new RuntimeException("No faction available for parsing");
+                    }
+                    StructuredArmyData.DetachmentList detachment = getDetachment(list.armyListText, factionForParsing.factionData.getDetachments());
                     StructuredArmyData.SubFaction subFaction = getSubFaction(list.armyListText);
-                    StructuredArmyList armyList = new StructuredArmyList(list.userId, list.playerId, list.event, list.user, list.id, faction.name(), null == subFaction ? null : subFaction.name(), null == detachment ? null : detachment.getName());
-                    populateUnits(lines, faction, detachment, armyList);
+                    StructuredArmyList armyList = new StructuredArmyList(list.userId, list.playerId, list.event, list.user, list.id, null == declaredFaction ? null : declaredFaction.name(), null == parsedFaction ? null : parsedFaction.name(), null == subFaction ? null : subFaction.name(), null == detachment ? null : detachment.getName());
+                    populateUnits(lines, factionForParsing, detachment, armyList);
                     newPal.parsedList = armyList;
                 } catch (Exception e) {
                     System.out.println("Unable to parse list: " + list + " Exception: " + e);
@@ -107,7 +117,22 @@ public class ParseList extends PTransform<@NonNull PCollection<EventWithPlayersA
             outputReceiver.output(newEpl);
         }
 
-        private StructuredArmyData.Faction getFaction(List<String> list) throws ParseException {
+        private StructuredArmyData.Faction getDeclaredFaction(PlayerAtEvent player) {
+            if (null == player.army || null == player.army.name) {
+                return null;
+            }
+            String factionName = player.army.name;
+            for (StructuredArmyData.Faction maybeFaction : StructuredArmyData.Faction.values()) {
+                for (String name : maybeFaction.names) {
+                    if (factionName.toLowerCase().equals(name.toLowerCase())) {
+                        return maybeFaction;
+                    }
+                }
+            }
+            return null;
+        }
+
+        private StructuredArmyData.Faction getParsedFaction(List<String> list, StructuredArmyData.Faction declaredFaction) throws ParseException {
             Set<StructuredArmyData.Faction> lineOneFactions = new HashSet<>();
             Set<StructuredArmyData.Faction> factions = new HashSet<>();
             StructuredArmyData.Faction firstFoundFaction = null;
@@ -133,7 +158,7 @@ public class ParseList extends PTransform<@NonNull PCollection<EventWithPlayersA
                 isFirstLine = false;
             }
             if (factions.isEmpty()) {
-                throw new ParseException("No Faction Found");
+                return null;
             }
             if (factions.size() == 1) {
                 return factions.stream().toList().get(0);
@@ -216,7 +241,14 @@ public class ParseList extends PTransform<@NonNull PCollection<EventWithPlayersA
                 }
             }
             // END Chaos Allies
-            throw new ParseException("Multiple Factions Found:" + factions);
+
+            //If we parse a faction, and it matches the declared faction, use that
+            if (null != declaredFaction && factions.contains(declaredFaction)) {
+                return declaredFaction;
+            }
+
+            System.out.println("Multiple Factions Found:" + factions);
+            return null;
         }
 
         private StructuredArmyData.SubFaction getSubFaction(String list) throws ParseException {
