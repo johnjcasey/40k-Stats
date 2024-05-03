@@ -12,6 +12,7 @@ import org.checkerframework.checker.initialization.qual.Initialized;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.UnknownKeyFor;
 import org.jetbrains.annotations.NotNull;
+import org.joda.time.Duration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class QueryLists extends PTransform<@NonNull PCollection<KV<Event, List<P
     @NotNull
     @Override
     public PCollection<EventWithPlayersAndLists> expand(@NotNull PCollection<KV<Event, List<PlayerAtEvent>>> input) {
-        return input.apply(RequestResponseIO.of(new ListApiCaller(), getSchemaCoder(input.getPipeline(), EventWithPlayersAndLists.class)))
+        return input.apply(RequestResponseIO.of(new ListApiCaller(), getSchemaCoder(input.getPipeline(), EventWithPlayersAndLists.class)).withTimeout(new Duration(Duration.standardMinutes(5))))
                 .getResponses();
     }
 
@@ -32,6 +33,7 @@ public class QueryLists extends PTransform<@NonNull PCollection<KV<Event, List<P
         public EventWithPlayersAndLists call(KV<Event, List<PlayerAtEvent>> request) throws @UnknownKeyFor @NonNull @Initialized UserCodeExecutionException {
             EventWithPlayersAndLists epl = new EventWithPlayersAndLists();
             epl.event = request.getKey();
+            System.out.println("Querying for Lists for event: " + epl.event.name);
             epl.playersWithList = new ArrayList<>();
             for (PlayerAtEvent player : request.getValue()) {
                 if (null != player.armyListObjectId) {

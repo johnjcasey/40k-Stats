@@ -32,7 +32,7 @@ public class QueryBCPWeekendData {
                 .apply("Generate Range", ParDo.of(new DoFn<byte[], KV<Instant, Instant>>() {
                     @ProcessElement
                     public void processElement(OutputReceiver<KV<Instant, Instant>> outputReceiver) {
-                        outputReceiver.output(KV.of(Instant.now().minus(7 * 4, ChronoUnit.DAYS), Instant.now()));
+                        outputReceiver.output(KV.of(Instant.now().minus(6, ChronoUnit.DAYS), Instant.now()));
                     }
                 })).apply(new QueryEvents())
                 //filter to events that fired, and are GT sized
