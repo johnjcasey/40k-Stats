@@ -25,7 +25,10 @@ public class AdeptusCustodes implements StructuredArmyData.FactionData {
     }
 
     enum Detachments implements StructuredArmyData.DetachmentList {
-        Shield_Host("Shield Host", List.of("Ceaseless Hunter", "Inspirational Exemplar", "Unstoppable Destroyer", "Veiled Blade"));
+        Auric_Champions("Auric Champions", List.of("Blade Imperator", "Inspirational Exemplar", "Martial Philosopher", "Veiled Blade")),
+        Null_Maiden_Vigil("Null Maiden Vigil", List.of("Enhanced Voidsheen Cloak", "Huntress’ Eye", "Oblivion Knight", "Raptor Blade")),
+        Shield_Host("Shield Host", List.of("Auric Mantle", "Castellan’s Mark", "From the Hall of Armouries", "Panoptispex")),
+        Talons_of_the_Emperor("Talons of the Emperor", List.of("Aegis Projector", "Champion of the Imperium", "Gift of Terran Artifice", "Radiant Mantle"));
 
         public final String name;
 

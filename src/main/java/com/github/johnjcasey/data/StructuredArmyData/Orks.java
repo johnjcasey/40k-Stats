@@ -25,6 +25,12 @@ public class Orks implements StructuredArmyData.FactionData {
     }
 
     enum Detachments implements StructuredArmyData.DetachmentList {
+        Bully_Boyz("Bully Boyz", List.of("Big Gob", "Da Biggest Boss", "’Eadstompa", "Tellyporta")),
+        Da_Big_Hunt("Da Big Hunt", List.of("Glory Hog", "Proper Killy", "Skrag Every Stash!", "Surly as a Squiggoth")),
+        Dread_Mob("Dread Mob", List.of("Gitfinder Googlez", "Press It Fasta!", "Smoky Gubbinz", "Supa-glowy Fing")),
+        Green_Tide("Green Tide", List.of("Bloodthirsty Belligerence", "Brutal But Kunnin’", "Ferocious Show Of", "Raucous Warcaller")),
+        Kult_of_Speed("Kult of Speed", List.of("Fasta Than Yooz", "Speed Makes Right", "Squig-hide Tyres", "Wazblasta")),
+        War_Horde("War Horde", List.of("Follow Me Ladz", "Headwoppa’s Killchoppa", "Kunnin’ But Brutal", "Supa-Cybork Body")),
         Waaagh_Tribe("Waaagh! Tribe", List.of("Follow Me Ladz", "Headwoppa’s Killchoppa", "Kunnin’ But Brutal", "Supa-Cybork Body"));
 
         public final String name;
