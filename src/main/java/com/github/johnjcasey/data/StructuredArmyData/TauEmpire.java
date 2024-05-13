@@ -25,7 +25,11 @@ public class TauEmpire implements StructuredArmyData.FactionData {
     }
 
     enum Detachments implements StructuredArmyData.DetachmentList {
-        Kauyon("Kauyon", List.of("Exemplar of the Kauyon", "Precision of the Patient Hunter", "Puretide Engram Neurochip", "Through Unity, Devastation"));
+        Kauyon("Kauyon", List.of("Exemplar of the Kauyon", "Precision of the Patient Hunter", "Puretide Engram Neurochip", "Through Unity, Devastation", "Solid-image Projection Unit")),
+        Kroot_Hunting_Pack("Kroot Hunting Pack", List.of("Borthrod Gland", "Kroothawk Flock", "Nomadic Hunter", "Root-carved Weapons")),
+        //Abbreviated to "Mont" because of the unusual ’ character that GW uses probably doesn't show up consistently in apps
+        Montka("Mont", List.of("Coordinated Exploitation", "Exemplar of the Mont’ka", "Strategic Conqueror", "Strike Swiftly")),
+        Retaliation_Cadre("Retaliation Cadre", List.of("Internal Grenade Racks", "Prototype Weapon System", "Puretide Engram Neurochip", "Starflare Ignition System"));
 
         public final String name;
 
@@ -59,6 +63,9 @@ public class TauEmpire implements StructuredArmyData.FactionData {
         Commander_in_Enforcer_Battlesuit("Commander in Enforcer Battlesuit"),
         Commander_Shadowsun("Commander Shadowsun"),
         Crisis_Battlesuits("Crisis Battlesuits"),
+        Crisis_Fireknife_Battlesuits("Crisis Fireknife Battlesuits"),
+        Crisis_Starscythe_Battlesuits("Crisis Starscythe Battlesuits"),
+        Crisis_Sunforge_Battlesuits("Crisis Sunforge Battlesuits"),
         Darkstrider("Darkstrider"),
         Devilfish("Devilfish"),
         Ethereal("Ethereal"),
@@ -69,7 +76,12 @@ public class TauEmpire implements StructuredArmyData.FactionData {
         Kroot_Farstalkers("Kroot Farstalkers"),
         Kroot_Hounds("Kroot Hounds"),
         Kroot_Shaper("Kroot Shaper"),
+        Kroot_Flesh_Shaper("Kroot Flesh Shaper"),
+        Kroot_Trail_Shaper("Kroot Trail Shaper"),
+        Kroot_War_Shaper("Kroot War Shaper"),
+        Kroot_Lone_spear("Kroot Lone-spear"),
         Krootox_Riders("Krootox Riders"),
+        Krootox_Rampagers("Krootox Rampagers"),
         Longstrike("Longstrike"),
         Pathfinder_Team("Pathfinder Team"),
         Piranha("Piranha"),
