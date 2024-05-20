@@ -35,19 +35,18 @@ public class ParseList extends PTransform<@NonNull PCollection<EventWithPlayersA
         StructuredArmyData.Faction additionalFaction = null;
         String sheet = null;
         String enhancement = null;
-        for (String dataSheet : dataSheets) {
-            if (unitNameLine.toLowerCase().contains(dataSheet.toLowerCase())) {
-                sheet = dataSheet;
-            }
+        String lowerUnit = unitNameLine.toLowerCase();
+        List<String> matchingDatasheets = matchingDatasheets(dataSheets, lowerUnit);
+        if (!matchingDatasheets.isEmpty()){
+            sheet = matchingDatasheets.get(0);
         }
         if (null == sheet) {
             for (KV<StructuredArmyData.Faction, List<String>> ally : allies) {
-                for (String dataSheet : ally.getValue()) {
-                    if (unitNameLine.toLowerCase().contains(dataSheet.toLowerCase())) {
-                        sheet = dataSheet;
-                        additionalFaction = ally.getKey();
-                    }
+                List<String> matchingAllyDatasheets = matchingDatasheets(ally.getValue(), lowerUnit);
+                if (!matchingAllyDatasheets.isEmpty()){
+                    sheet = matchingAllyDatasheets.get(0);
                 }
+                additionalFaction = ally.getKey();
             }
         }
 
@@ -73,6 +72,10 @@ public class ParseList extends PTransform<@NonNull PCollection<EventWithPlayersA
         } else {
             return Pair.of(Optional.empty(), Optional.empty());
         }
+    }
+
+    List<String> matchingDatasheets(List<String> dataSheets, String lowerUnit){
+        return dataSheets.stream().map(String::toLowerCase).filter(lowerUnit::contains).sorted(Comparator.comparingInt(String::length).reversed()).toList();
     }
 
     private static class ParseException extends Exception {
@@ -291,9 +294,9 @@ public class ParseList extends PTransform<@NonNull PCollection<EventWithPlayersA
             //because of the limits of the parser, some units will have extra lines, such as "OTHER DATASHEETS" at the
             //end
             for (String line : list) {
-                //This checks if a line starts with a letter, and contains [.*] or (.*).
+                //This checks if a line starts with a letter, and contains [.*[1-9]{2,}.*] or (.*[1-9]{2,}.*).
                 //This matches the first line of a datasheet in either the Battlescribe or the GW format
-                if (line.matches("^.*[a-zA-Z].*(\\[.*]|\\(.*\\)).*")) {
+                if (line.matches("^.*[a-zA-Z].*(\\[.*[1-9]{2,}.*]|\\(.*[1-9]{2,}.*\\)).*")) {
                     bundled.add(current);
                     current = new ArrayList<>();
                 }

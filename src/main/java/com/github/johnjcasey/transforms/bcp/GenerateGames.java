@@ -50,7 +50,9 @@ public class GenerateGames extends PTransform<@NonNull PCollection<EventWithPlay
                         PlayerAtEvent opponent = opponentAndList.player;
                         game.opponent.id = opponent.userId;
                         game.opponent.name = opponent.name;
-                        game.opponent.score = opponent.total_games.get(i).gamePoints;
+                        if (opponent.total_games != null && opponent.total_games.size() > i && opponent.total_games.get(i) != null) {
+                            game.opponent.score = opponent.total_games.get(i).gamePoints;
+                        }
                     }
                     outputReceiver.output(game);
                 }
