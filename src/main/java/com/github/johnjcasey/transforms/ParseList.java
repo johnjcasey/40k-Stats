@@ -296,7 +296,7 @@ public class ParseList extends PTransform<@NonNull PCollection<EventWithPlayersA
             for (String line : list) {
                 //This checks if a line starts with a letter, and contains [.*[1-9]{2,}.*] or (.*[1-9]{2,}.*).
                 //This matches the first line of a datasheet in either the Battlescribe or the GW format
-                if (line.matches("^.*[a-zA-Z].*(\\[.*[1-9]{2,}.*]|\\(.*[1-9]{2,}.*\\)).*")) {
+                if (line.matches("^.*[a-zA-Z].*(\\[.*[0-9]{2,}.*]|\\(.*[0-9]{2,}.*\\)).*")) {
                     bundled.add(current);
                     current = new ArrayList<>();
                 }

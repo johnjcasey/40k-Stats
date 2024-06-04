@@ -27,7 +27,7 @@ public class ListApi {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(new URI("https://newprod-api.bestcoastpairings.com/v1/armylists/" + listId))
                 .header("Client-Id", "259e2q22frfasni9dtjb9q3i7a")
-                .header("Identity", authprops.getProperty("identity"))
+//                .header("Identity", authprops.getProperty("identity"))
                 .header("Authorization", authprops.getProperty("authorization"))
                 .build();
 

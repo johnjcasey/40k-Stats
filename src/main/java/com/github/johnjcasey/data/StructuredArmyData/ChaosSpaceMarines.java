@@ -25,7 +25,15 @@ public class ChaosSpaceMarines implements StructuredArmyData.FactionData {
     }
 
     enum Detachments implements StructuredArmyData.DetachmentList {
-        Slaves_to_Darkness("Slaves to Darkness", List.of("Eye of Tzeentch", "Intoxicating Elixir", "Liber Hereticus", "Orbs of Unlife", "Talisman of Burning Blood"));
+        Slaves_to_Darkness("Slaves to Darkness", List.of("Eye of Tzeentch", "Intoxicating Elixir", "Liber Hereticus", "Orbs of Unlife", "Talisman of Burning Blood")),
+        Chaos_Cult("Chaos Cult", List.of("Amulet of Tainted Vigour", "Cultist’s Brand", "Incendiary Goad", "Warped Foresight")),
+        Deceptors("Deceptors", List.of("Cursed Fang", "Falsehood", "Shroud of Obfuscation", "Soul Link")),
+        Dread_Talons("Dread Talons", List.of("Eater of Dread", "Night’s Shroud", "Warp-fuelled Thrusters", "Willbreaker")),
+        Fellhammer_Siege_host("Fellhammer Siege-host", List.of("Bastion Plate", "Iron Artifice", "Ironbound Enmity", "Warp Tracer")),
+        Pactbound_Zealots("Pactbound Zealots", List.of("Eye of Tzeentch", "Intoxicating Elixir", "Orbs of Unlife", "Talisman of Burning Blood")),
+        Renegade_Raiders("Renegade Raiders", List.of("Despot’s Claim", "Dread Reaver", "Mark of the Hound", "Tyrant’s Lash")),
+        Soulforged_Warpack("Soulforged Warpack", List.of("Forge’s Blessing", "Invigorated Mechatendrils", "Tempting Addendum", "Soul Harvester")),
+        Veterans_of_the_Long_War("Veterans of the Long War", List.of("Eager for Vengeance", "Eye of Abaddon", "Mark of Legend", "Warmaster’s Gift"));
 
         public final String name;
 
@@ -61,6 +69,7 @@ public class ChaosSpaceMarines implements StructuredArmyData.FactionData {
         Chaos_Terminator_Squad("Chaos Terminator Squad"),
         Chaos_Vindicator("Chaos Vindicator"),
         Chosen("Chosen"),
+        Cultist_Firebrand("Cultist Firebrand"),
         Cultist_Mob("Cultist Mob"),
         Cypher("Cypher"),
         Dark_Apostle("Dark Apostle"),
